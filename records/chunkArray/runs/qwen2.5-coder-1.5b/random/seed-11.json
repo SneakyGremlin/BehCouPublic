@@ -1,0 +1,60 @@
+{
+  "taskId": "chunkArray",
+  "specVersion": 1,
+  "candidateId": "chunkArray/qwen2.5-coder-1.5b",
+  "method": "random",
+  "seed": 11,
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "budget": {
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000
+  },
+  "samplingRevision": "sampling.v1",
+  "sampler": {
+    "id": "random",
+    "distribution": "values: array length uniform on 0..32, each element uniform on [-1000, 1000]; chunkSize uniform on 1..1000. No shrinking."
+  },
+  "executions": {
+    "search": 100,
+    "shrinking": 0,
+    "replay": 0
+  },
+  "stoppingReason": "budget-exhausted",
+  "incomplete": false,
+  "failureClass": "none",
+  "valueDiscrepancy": false,
+  "discrepancyIsConfirmedViolation": false,
+  "contractVerdict": null,
+  "contractVerdictGuide": "Leave contractVerdict null until you adjudicate by hand. A returned-value discrepancy is not a confirmed candidate violation. Suggested values: candidate-violation, reference-bug, ambiguous-contract, not-a-violation.",
+  "verdictNotes": "",
+  "contractObservationFailures": {
+    "inputMutation": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "resultAliasing": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "unexpectedResultProperties": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    }
+  },
+  "originalFailure": null,
+  "reducedFailure": null,
+  "interruption": null,
+  "replay": {
+    "fastCheckPath": null,
+    "directInput": null,
+    "note": "Replay runs the saved candidate again. It does not call Ollama and it does not change the candidate file."
+  },
+  "fastCheck": null
+}

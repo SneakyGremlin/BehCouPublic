@@ -1,0 +1,1172 @@
+{
+  "taskId": "paginate",
+  "specVersion": 1,
+  "candidateId": "paginate/qwen2.5-coder-1.5b",
+  "syntaxStatus": "passed",
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "ineligibleReason": null,
+  "cases": [
+    {
+      "args": [
+        [
+          10,
+          20,
+          30,
+          40,
+          50
+        ],
+        3,
+        2
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": {
+          "items": [
+            50
+          ],
+          "pageNumber": 3,
+          "pageSize": 2,
+          "totalItems": 5,
+          "totalPages": 3
+        }
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": {
+          "items": [
+            50
+          ],
+          "pageNumber": 3,
+          "pageSize": 2,
+          "totalItems": 5,
+          "totalPages": 3
+        },
+        "observations": {
+          "inputBefore": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            3,
+            2
+          ],
+          "inputAfter": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            3,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": {
+          "items": [
+            50
+          ],
+          "pageNumber": 3,
+          "pageSize": 2,
+          "totalItems": 5,
+          "totalPages": 3
+        },
+        "observations": {
+          "inputBefore": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            3,
+            2
+          ],
+          "inputAfter": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            3,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            3,
+            2
+          ],
+          "inputAfter": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            3,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        },
+        "candidate": {
+          "inputBefore": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            3,
+            2
+          ],
+          "inputAfter": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            3,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      }
+    },
+    {
+      "args": [
+        [
+          10,
+          20,
+          30,
+          40,
+          50
+        ],
+        1,
+        2
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": {
+          "items": [
+            10,
+            20
+          ],
+          "pageNumber": 1,
+          "pageSize": 2,
+          "totalItems": 5,
+          "totalPages": 3
+        }
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": {
+          "items": [
+            10,
+            20
+          ],
+          "pageNumber": 1,
+          "pageSize": 2,
+          "totalItems": 5,
+          "totalPages": 3
+        },
+        "observations": {
+          "inputBefore": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            1,
+            2
+          ],
+          "inputAfter": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            1,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": {
+          "items": [
+            10,
+            20
+          ],
+          "pageNumber": 1,
+          "pageSize": 2,
+          "totalItems": 5,
+          "totalPages": 3
+        },
+        "observations": {
+          "inputBefore": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            1,
+            2
+          ],
+          "inputAfter": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            1,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            1,
+            2
+          ],
+          "inputAfter": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            1,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        },
+        "candidate": {
+          "inputBefore": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            1,
+            2
+          ],
+          "inputAfter": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            1,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      }
+    },
+    {
+      "args": [
+        [
+          10,
+          20,
+          30,
+          40,
+          50
+        ],
+        4,
+        2
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": {
+          "items": [],
+          "pageNumber": 4,
+          "pageSize": 2,
+          "totalItems": 5,
+          "totalPages": 3
+        }
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": {
+          "items": [],
+          "pageNumber": 4,
+          "pageSize": 2,
+          "totalItems": 5,
+          "totalPages": 3
+        },
+        "observations": {
+          "inputBefore": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            4,
+            2
+          ],
+          "inputAfter": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            4,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": {
+          "items": [],
+          "pageNumber": 4,
+          "pageSize": 2,
+          "totalItems": 5,
+          "totalPages": 3
+        },
+        "observations": {
+          "inputBefore": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            4,
+            2
+          ],
+          "inputAfter": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            4,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            4,
+            2
+          ],
+          "inputAfter": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            4,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        },
+        "candidate": {
+          "inputBefore": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            4,
+            2
+          ],
+          "inputAfter": [
+            [
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            4,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      }
+    },
+    {
+      "args": [
+        [],
+        1,
+        10
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": {
+          "items": [],
+          "pageNumber": 1,
+          "pageSize": 10,
+          "totalItems": 0,
+          "totalPages": 0
+        }
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": {
+          "items": [],
+          "pageNumber": 1,
+          "pageSize": 10,
+          "totalItems": 0,
+          "totalPages": 0
+        },
+        "observations": {
+          "inputBefore": [
+            [],
+            1,
+            10
+          ],
+          "inputAfter": [
+            [],
+            1,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": {
+          "items": [],
+          "pageNumber": 1,
+          "pageSize": 10,
+          "totalItems": 0,
+          "totalPages": 0
+        },
+        "observations": {
+          "inputBefore": [
+            [],
+            1,
+            10
+          ],
+          "inputAfter": [
+            [],
+            1,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [],
+            1,
+            10
+          ],
+          "inputAfter": [
+            [],
+            1,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        },
+        "candidate": {
+          "inputBefore": [
+            [],
+            1,
+            10
+          ],
+          "inputAfter": [
+            [],
+            1,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      }
+    },
+    {
+      "args": [
+        [],
+        3,
+        2
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": {
+          "items": [],
+          "pageNumber": 3,
+          "pageSize": 2,
+          "totalItems": 0,
+          "totalPages": 0
+        }
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": {
+          "items": [],
+          "pageNumber": 3,
+          "pageSize": 2,
+          "totalItems": 0,
+          "totalPages": 0
+        },
+        "observations": {
+          "inputBefore": [
+            [],
+            3,
+            2
+          ],
+          "inputAfter": [
+            [],
+            3,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": {
+          "items": [],
+          "pageNumber": 3,
+          "pageSize": 2,
+          "totalItems": 0,
+          "totalPages": 0
+        },
+        "observations": {
+          "inputBefore": [
+            [],
+            3,
+            2
+          ],
+          "inputAfter": [
+            [],
+            3,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [],
+            3,
+            2
+          ],
+          "inputAfter": [
+            [],
+            3,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        },
+        "candidate": {
+          "inputBefore": [
+            [],
+            3,
+            2
+          ],
+          "inputAfter": [
+            [],
+            3,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      }
+    },
+    {
+      "args": [
+        [
+          1,
+          2,
+          3
+        ],
+        1,
+        10
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": {
+          "items": [
+            1,
+            2,
+            3
+          ],
+          "pageNumber": 1,
+          "pageSize": 10,
+          "totalItems": 3,
+          "totalPages": 1
+        }
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": {
+          "items": [
+            1,
+            2,
+            3
+          ],
+          "pageNumber": 1,
+          "pageSize": 10,
+          "totalItems": 3,
+          "totalPages": 1
+        },
+        "observations": {
+          "inputBefore": [
+            [
+              1,
+              2,
+              3
+            ],
+            1,
+            10
+          ],
+          "inputAfter": [
+            [
+              1,
+              2,
+              3
+            ],
+            1,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": {
+          "items": [
+            1,
+            2,
+            3
+          ],
+          "pageNumber": 1,
+          "pageSize": 10,
+          "totalItems": 3,
+          "totalPages": 1
+        },
+        "observations": {
+          "inputBefore": [
+            [
+              1,
+              2,
+              3
+            ],
+            1,
+            10
+          ],
+          "inputAfter": [
+            [
+              1,
+              2,
+              3
+            ],
+            1,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              1,
+              2,
+              3
+            ],
+            1,
+            10
+          ],
+          "inputAfter": [
+            [
+              1,
+              2,
+              3
+            ],
+            1,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        },
+        "candidate": {
+          "inputBefore": [
+            [
+              1,
+              2,
+              3
+            ],
+            1,
+            10
+          ],
+          "inputAfter": [
+            [
+              1,
+              2,
+              3
+            ],
+            1,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      }
+    },
+    {
+      "args": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        2,
+        2
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": {
+          "items": [
+            3,
+            4
+          ],
+          "pageNumber": 2,
+          "pageSize": 2,
+          "totalItems": 4,
+          "totalPages": 2
+        }
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": {
+          "items": [
+            3,
+            4
+          ],
+          "pageNumber": 2,
+          "pageSize": 2,
+          "totalItems": 4,
+          "totalPages": 2
+        },
+        "observations": {
+          "inputBefore": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            2,
+            2
+          ],
+          "inputAfter": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            2,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": {
+          "items": [
+            3,
+            4
+          ],
+          "pageNumber": 2,
+          "pageSize": 2,
+          "totalItems": 4,
+          "totalPages": 2
+        },
+        "observations": {
+          "inputBefore": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            2,
+            2
+          ],
+          "inputAfter": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            2,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            2,
+            2
+          ],
+          "inputAfter": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            2,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        },
+        "candidate": {
+          "inputBefore": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            2,
+            2
+          ],
+          "inputAfter": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            2,
+            2
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": [
+            "items",
+            "pageNumber",
+            "pageSize",
+            "totalItems",
+            "totalPages"
+          ]
+        }
+      }
+    }
+  ]
+}

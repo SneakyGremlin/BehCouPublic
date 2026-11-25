@@ -1,0 +1,405 @@
+{
+  "taskId": "mergeClosedIntervals",
+  "specVersion": 1,
+  "candidateId": "mergeClosedIntervals/qwen2.5-coder-1.5b",
+  "method": "random",
+  "seed": 1024,
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "budget": {
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000
+  },
+  "samplingRevision": "sampling.v1",
+  "sampler": {
+    "id": "random",
+    "distribution": "intervals: array length uniform on 0..32; each interval is two integers uniform on [-1000, 1000], ordered so start <= end. No shrinking."
+  },
+  "executions": {
+    "search": 100,
+    "shrinking": 0,
+    "replay": 0
+  },
+  "stoppingReason": "budget-exhausted",
+  "incomplete": false,
+  "failureClass": "none",
+  "valueDiscrepancy": false,
+  "discrepancyIsConfirmedViolation": false,
+  "contractVerdict": null,
+  "contractVerdictGuide": "Leave contractVerdict null until you adjudicate by hand. A returned-value discrepancy is not a confirmed candidate violation. Suggested values: candidate-violation, reference-bug, ambiguous-contract, not-a-violation.",
+  "verdictNotes": "",
+  "contractObservationFailures": {
+    "inputMutation": {
+      "count": 92,
+      "first": {
+        "args": [
+          [
+            {
+              "start": 112,
+              "end": 755
+            },
+            {
+              "start": -875,
+              "end": -760
+            },
+            {
+              "start": -457,
+              "end": 962
+            },
+            {
+              "start": -388,
+              "end": -353
+            },
+            {
+              "start": -79,
+              "end": 51
+            },
+            {
+              "start": -724,
+              "end": 714
+            },
+            {
+              "start": -699,
+              "end": -97
+            }
+          ]
+        ],
+        "validatorAccepted": true,
+        "size": {
+          "elements": 7,
+          "jsonChars": 177
+        },
+        "reference": {
+          "kind": "returned",
+          "value": [
+            {
+              "start": -875,
+              "end": -760
+            },
+            {
+              "start": -724,
+              "end": 962
+            }
+          ],
+          "observations": {
+            "inputBefore": [
+              [
+                {
+                  "start": 112,
+                  "end": 755
+                },
+                {
+                  "start": -875,
+                  "end": -760
+                },
+                {
+                  "start": -457,
+                  "end": 962
+                },
+                {
+                  "start": -388,
+                  "end": -353
+                },
+                {
+                  "start": -79,
+                  "end": 51
+                },
+                {
+                  "start": -724,
+                  "end": 714
+                },
+                {
+                  "start": -699,
+                  "end": -97
+                }
+              ]
+            ],
+            "inputAfter": [
+              [
+                {
+                  "start": 112,
+                  "end": 755
+                },
+                {
+                  "start": -875,
+                  "end": -760
+                },
+                {
+                  "start": -457,
+                  "end": 962
+                },
+                {
+                  "start": -388,
+                  "end": -353
+                },
+                {
+                  "start": -79,
+                  "end": 51
+                },
+                {
+                  "start": -724,
+                  "end": 714
+                },
+                {
+                  "start": -699,
+                  "end": -97
+                }
+              ]
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": false,
+            "extraResultProperties": []
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "candidate": {
+          "kind": "returned",
+          "value": [
+            {
+              "start": -875,
+              "end": -760
+            },
+            {
+              "start": -724,
+              "end": 962
+            }
+          ],
+          "observations": {
+            "inputBefore": [
+              [
+                {
+                  "start": 112,
+                  "end": 755
+                },
+                {
+                  "start": -875,
+                  "end": -760
+                },
+                {
+                  "start": -457,
+                  "end": 962
+                },
+                {
+                  "start": -388,
+                  "end": -353
+                },
+                {
+                  "start": -79,
+                  "end": 51
+                },
+                {
+                  "start": -724,
+                  "end": 714
+                },
+                {
+                  "start": -699,
+                  "end": -97
+                }
+              ]
+            ],
+            "inputAfter": [
+              [
+                {
+                  "start": -875,
+                  "end": -760
+                },
+                {
+                  "start": -724,
+                  "end": 962
+                },
+                {
+                  "start": -699,
+                  "end": -97
+                },
+                {
+                  "start": -457,
+                  "end": 962
+                },
+                {
+                  "start": -388,
+                  "end": -353
+                },
+                {
+                  "start": -79,
+                  "end": 51
+                },
+                {
+                  "start": 112,
+                  "end": 755
+                }
+              ]
+            ],
+            "inputMutated": true,
+            "resultAliasesInput": false,
+            "extraResultProperties": []
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "valueDiscrepancy": false,
+        "contractObservations": {
+          "reference": {
+            "inputBefore": [
+              [
+                {
+                  "start": 112,
+                  "end": 755
+                },
+                {
+                  "start": -875,
+                  "end": -760
+                },
+                {
+                  "start": -457,
+                  "end": 962
+                },
+                {
+                  "start": -388,
+                  "end": -353
+                },
+                {
+                  "start": -79,
+                  "end": 51
+                },
+                {
+                  "start": -724,
+                  "end": 714
+                },
+                {
+                  "start": -699,
+                  "end": -97
+                }
+              ]
+            ],
+            "inputAfter": [
+              [
+                {
+                  "start": 112,
+                  "end": 755
+                },
+                {
+                  "start": -875,
+                  "end": -760
+                },
+                {
+                  "start": -457,
+                  "end": 962
+                },
+                {
+                  "start": -388,
+                  "end": -353
+                },
+                {
+                  "start": -79,
+                  "end": 51
+                },
+                {
+                  "start": -724,
+                  "end": 714
+                },
+                {
+                  "start": -699,
+                  "end": -97
+                }
+              ]
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": false,
+            "extraResultProperties": []
+          },
+          "candidate": {
+            "inputBefore": [
+              [
+                {
+                  "start": 112,
+                  "end": 755
+                },
+                {
+                  "start": -875,
+                  "end": -760
+                },
+                {
+                  "start": -457,
+                  "end": 962
+                },
+                {
+                  "start": -388,
+                  "end": -353
+                },
+                {
+                  "start": -79,
+                  "end": 51
+                },
+                {
+                  "start": -724,
+                  "end": 714
+                },
+                {
+                  "start": -699,
+                  "end": -97
+                }
+              ]
+            ],
+            "inputAfter": [
+              [
+                {
+                  "start": -875,
+                  "end": -760
+                },
+                {
+                  "start": -724,
+                  "end": 962
+                },
+                {
+                  "start": -699,
+                  "end": -97
+                },
+                {
+                  "start": -457,
+                  "end": 962
+                },
+                {
+                  "start": -388,
+                  "end": -353
+                },
+                {
+                  "start": -79,
+                  "end": 51
+                },
+                {
+                  "start": 112,
+                  "end": 755
+                }
+              ]
+            ],
+            "inputMutated": true,
+            "resultAliasesInput": false,
+            "extraResultProperties": []
+          }
+        }
+      },
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "resultAliasing": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "unexpectedResultProperties": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    }
+  },
+  "originalFailure": null,
+  "reducedFailure": null,
+  "interruption": null,
+  "replay": {
+    "fastCheckPath": null,
+    "directInput": null,
+    "note": "Replay runs the saved candidate again. It does not call Ollama and it does not change the candidate file."
+  },
+  "fastCheck": null
+}

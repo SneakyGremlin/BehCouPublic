@@ -1,0 +1,44 @@
+{
+  "taskId": "groupByKey",
+  "specVersion": 1,
+  "samplingRevision": "sampling.v1",
+  "samplingHash": "78e3aa72",
+  "planned": 60,
+  "executed": 20,
+  "ineligible": 40,
+  "incomplete": 0,
+  "additionalDetectionDenominator": 1,
+  "note": "Executed runs are searches that started. Incomplete runs timed out or stopped before a complete search and are included in executed. Ineligible runs were not started. A discrepancy is not a confirmed candidate violation. This grid does not call Ollama.",
+  "candidates": [
+    {
+      "candidateId": "groupByKey/tinyllama",
+      "model": "tinyllama:latest",
+      "eligibility": "load-failed",
+      "baselineStatus": "failed",
+      "countsTowardAdditionalDetection": false,
+      "executedRuns": 0,
+      "ineligibleRuns": 20,
+      "incompleteRuns": 0
+    },
+    {
+      "candidateId": "groupByKey/qwen2.5-coder-1.5b",
+      "model": "qwen2.5-coder:1.5b",
+      "eligibility": "baseline-failed",
+      "baselineStatus": "failed",
+      "countsTowardAdditionalDetection": false,
+      "executedRuns": 0,
+      "ineligibleRuns": 20,
+      "incompleteRuns": 0
+    },
+    {
+      "candidateId": "groupByKey/deepseek-coder",
+      "model": "deepseek-coder:latest",
+      "eligibility": "eligible",
+      "baselineStatus": "passed",
+      "countsTowardAdditionalDetection": true,
+      "executedRuns": 20,
+      "ineligibleRuns": 0,
+      "incompleteRuns": 0
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "taskId": "mergeClosedIntervals",
+  "specVersion": 1,
+  "candidateId": "mergeClosedIntervals/gpt-4.1-mini-2025-04-14",
+  "method": "fast-check",
+  "seed": 507,
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "budget": {
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000
+  },
+  "samplingRevision": "sampling.v1",
+  "sampler": {
+    "id": "fast-check",
+    "distribution": "Each element is an equal-weight (1:1) oneof of (a) a short interval (start in [-50, 50], length 0..5) and (b) a full-range interval (two ordered integers in [-1000, 1000]). array length 0..32 via fast-check biased integer sizing (size: \"max\"). Shrinking re-applies the ordering, so it stays valid."
+  },
+  "executions": {
+    "search": 53,
+    "shrinking": 0,
+    "replay": 0
+  },
+  "stoppingReason": "timed-out",
+  "incomplete": true,
+  "failureClass": "infrastructure",
+  "valueDiscrepancy": false,
+  "discrepancyIsConfirmedViolation": false,
+  "contractVerdict": null,
+  "contractVerdictGuide": "Leave contractVerdict null until you adjudicate by hand. A returned-value discrepancy is not a confirmed candidate violation. Suggested values: candidate-violation, reference-bug, ambiguous-contract, not-a-violation.",
+  "verdictNotes": "",
+  "contractObservationFailures": {
+    "inputMutation": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "resultAliasing": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "unexpectedResultProperties": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    }
+  },
+  "originalFailure": null,
+  "reducedFailure": null,
+  "interruption": {
+    "phase": "search",
+    "args": [
+      [
+        {
+          "start": -175,
+          "end": 437
+        },
+        {
+          "start": -612,
+          "end": -398
+        },
+        {
+          "start": 2,
+          "end": 3
+        }
+      ]
+    ],
+    "validatorAccepted": true,
+    "configuredDeadlineMs": 2000,
+    "incompleteSides": [
+      {
+        "side": "reference",
+        "kind": "timedOut",
+        "stage": "loading",
+        "elapsedMs": 2337,
+        "message": "No result within 2000 ms (stopped at stage \"loading\")."
+      }
+    ],
+    "reference": {
+      "kind": "timedOut",
+      "stage": "loading",
+      "elapsedMs": 2337,
+      "message": "No result within 2000 ms (stopped at stage \"loading\")."
+    },
+    "candidate": {
+      "kind": "returned",
+      "value": [
+        {
+          "start": -612,
+          "end": -398
+        },
+        {
+          "start": -175,
+          "end": 437
+        }
+      ],
+      "observations": {
+        "inputBefore": [
+          [
+            {
+              "start": -175,
+              "end": 437
+            },
+            {
+              "start": -612,
+              "end": -398
+            },
+            {
+              "start": 2,
+              "end": 3
+            }
+          ]
+        ],
+        "inputAfter": [
+          [
+            {
+              "start": -175,
+              "end": 437
+            },
+            {
+              "start": -612,
+              "end": -398
+            },
+            {
+              "start": 2,
+              "end": 3
+            }
+          ]
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      },
+      "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+    },
+    "note": "This run did not complete on the input above. It is not a value discrepancy and was not shrunk. A reference-side failure, or a candidate failure at stage \"startup\" or \"loading\", is an infrastructure problem. A candidate timeout at stage \"call\" is the only shape that may be genuine candidate nontermination; confirm it by replaying this input. Replay does not call Ollama or change the candidate."
+  },
+  "replay": {
+    "fastCheckPath": null,
+    "directInput": [
+      [
+        {
+          "start": -175,
+          "end": 437
+        },
+        {
+          "start": -612,
+          "end": -398
+        },
+        {
+          "start": 2,
+          "end": 3
+        }
+      ]
+    ],
+    "note": "Replay runs the saved candidate again. It does not call Ollama and it does not change the candidate file."
+  },
+  "fastCheck": {
+    "numRuns": 53,
+    "numSkips": 0,
+    "numShrinks": 0
+  }
+}

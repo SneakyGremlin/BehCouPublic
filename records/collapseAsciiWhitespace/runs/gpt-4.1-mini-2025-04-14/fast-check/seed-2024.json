@@ -1,0 +1,198 @@
+{
+  "taskId": "collapseAsciiWhitespace",
+  "specVersion": 1,
+  "candidateId": "collapseAsciiWhitespace/gpt-4.1-mini-2025-04-14",
+  "method": "fast-check",
+  "seed": 2024,
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "budget": {
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000
+  },
+  "samplingRevision": "sampling.v1",
+  "sampler": {
+    "id": "fast-check",
+    "distribution": "Equal-weight (1:1) oneof: (a) a whitespace-heavy alphabet {space, tab, CR, LF, VT, FF, a, b}; (b) binary-ascii (all of U+0000..U+007F). Length 0..64 with size \"max\". Shrinking stays inside the chosen branch."
+  },
+  "executions": {
+    "search": 1,
+    "shrinking": 10,
+    "replay": 2
+  },
+  "stoppingReason": "discrepancy",
+  "incomplete": false,
+  "failureClass": "none",
+  "valueDiscrepancy": true,
+  "discrepancyIsConfirmedViolation": false,
+  "contractVerdict": null,
+  "contractVerdictGuide": "Leave contractVerdict null until you adjudicate by hand. A returned-value discrepancy is not a confirmed candidate violation. Suggested values: candidate-violation, reference-bug, ambiguous-contract, not-a-violation.",
+  "verdictNotes": "",
+  "contractObservationFailures": {
+    "inputMutation": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "resultAliasing": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "unexpectedResultProperties": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    }
+  },
+  "originalFailure": {
+    "args": [
+      "a\f\u000b\u000b\u000b\u000b\ta b\r\rb\n\n\n\u000b\t\t\f\f\fb\n\r aaaa\t\f\f ba\f\u000b\n b\t\n \r\u000b\f\f"
+    ],
+    "validatorAccepted": true,
+    "size": {
+      "elements": null,
+      "jsonChars": 111
+    },
+    "reference": {
+      "kind": "returned",
+      "value": "a\f\u000b\u000b\u000b\u000b a b b \u000b \f\f\fb aaaa \f\f ba\f\u000b b \u000b\f\f",
+      "observations": {
+        "inputBefore": [
+          "a\f\u000b\u000b\u000b\u000b\ta b\r\rb\n\n\n\u000b\t\t\f\f\fb\n\r aaaa\t\f\f ba\f\u000b\n b\t\n \r\u000b\f\f"
+        ],
+        "inputAfter": [
+          "a\f\u000b\u000b\u000b\u000b\ta b\r\rb\n\n\n\u000b\t\t\f\f\fb\n\r aaaa\t\f\f ba\f\u000b\n b\t\n \r\u000b\f\f"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      },
+      "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+    },
+    "candidate": {
+      "kind": "returned",
+      "value": "a\f\u000b\u000b\u000b\u000b a b b \u000b \f\f\fb aaaa \f\f ba\f\u000b b",
+      "observations": {
+        "inputBefore": [
+          "a\f\u000b\u000b\u000b\u000b\ta b\r\rb\n\n\n\u000b\t\t\f\f\fb\n\r aaaa\t\f\f ba\f\u000b\n b\t\n \r\u000b\f\f"
+        ],
+        "inputAfter": [
+          "a\f\u000b\u000b\u000b\u000b\ta b\r\rb\n\n\n\u000b\t\t\f\f\fb\n\r aaaa\t\f\f ba\f\u000b\n b\t\n \r\u000b\f\f"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      },
+      "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+    },
+    "valueDiscrepancy": true,
+    "contractObservations": {
+      "reference": {
+        "inputBefore": [
+          "a\f\u000b\u000b\u000b\u000b\ta b\r\rb\n\n\n\u000b\t\t\f\f\fb\n\r aaaa\t\f\f ba\f\u000b\n b\t\n \r\u000b\f\f"
+        ],
+        "inputAfter": [
+          "a\f\u000b\u000b\u000b\u000b\ta b\r\rb\n\n\n\u000b\t\t\f\f\fb\n\r aaaa\t\f\f ba\f\u000b\n b\t\n \r\u000b\f\f"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      },
+      "candidate": {
+        "inputBefore": [
+          "a\f\u000b\u000b\u000b\u000b\ta b\r\rb\n\n\n\u000b\t\t\f\f\fb\n\r aaaa\t\f\f ba\f\u000b\n b\t\n \r\u000b\f\f"
+        ],
+        "inputAfter": [
+          "a\f\u000b\u000b\u000b\u000b\ta b\r\rb\n\n\n\u000b\t\t\f\f\fb\n\r aaaa\t\f\f ba\f\u000b\n b\t\n \r\u000b\f\f"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      }
+    }
+  },
+  "reducedFailure": {
+    "args": [
+      "\f"
+    ],
+    "validatorAccepted": true,
+    "size": {
+      "elements": null,
+      "jsonChars": 6
+    },
+    "reference": {
+      "kind": "returned",
+      "value": "\f",
+      "observations": {
+        "inputBefore": [
+          "\f"
+        ],
+        "inputAfter": [
+          "\f"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": true,
+        "extraResultProperties": []
+      },
+      "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+    },
+    "candidate": {
+      "kind": "returned",
+      "value": "",
+      "observations": {
+        "inputBefore": [
+          "\f"
+        ],
+        "inputAfter": [
+          "\f"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      },
+      "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+    },
+    "valueDiscrepancy": true,
+    "contractObservations": {
+      "reference": {
+        "inputBefore": [
+          "\f"
+        ],
+        "inputAfter": [
+          "\f"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": true,
+        "extraResultProperties": []
+      },
+      "candidate": {
+        "inputBefore": [
+          "\f"
+        ],
+        "inputAfter": [
+          "\f"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      }
+    }
+  },
+  "interruption": null,
+  "replay": {
+    "fastCheckPath": "0:1:0:0:0:0:0",
+    "directInput": [
+      "\f"
+    ],
+    "note": "Replay runs the saved candidate again. It does not call Ollama and it does not change the candidate file."
+  },
+  "fastCheck": {
+    "numRuns": 1,
+    "numSkips": 0,
+    "numShrinks": 6
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "taskId": "countSubstring",
+  "specVersion": 1,
+  "samplingRevision": "sampling.v1",
+  "samplingHash": "7289994d",
+  "planned": 20,
+  "executed": 20,
+  "ineligible": 0,
+  "incomplete": 0,
+  "additionalDetectionDenominator": 1,
+  "note": "Executed runs are searches that started. Incomplete runs timed out or stopped before a complete search and are included in executed. Ineligible runs were not started. A discrepancy is not a confirmed candidate violation. This grid does not call Ollama. Opt-in cohort summary summary.gpt-4.1-mini-2025-04-14.json; records/<taskId>/summary.json was not read or replaced.",
+  "candidates": [
+    {
+      "candidateId": "countSubstring/gpt-4.1-mini-2025-04-14",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "eligibility": "eligible",
+      "baselineStatus": "passed",
+      "countsTowardAdditionalDetection": true,
+      "executedRuns": 20,
+      "ineligibleRuns": 0,
+      "incompleteRuns": 0
+    }
+  ]
+}

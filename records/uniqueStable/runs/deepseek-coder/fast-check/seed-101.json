@@ -1,0 +1,63 @@
+{
+  "taskId": "uniqueStable",
+  "specVersion": 1,
+  "candidateId": "uniqueStable/deepseek-coder",
+  "method": "fast-check",
+  "seed": 101,
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "budget": {
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000
+  },
+  "sampler": {
+    "id": "fast-check",
+    "distribution": "fast-check 4.10.2 samples the task arbitrary. For uniqueStable each element is drawn with equal probability from the integers [-3, 3] or from [-1000, 1000], and the length is an integer from 0 to 32 with size \"max\". Shrinking follows that arbitrary and stays inside it. fc.pre drops any value the validator rejects, and a dropped value does not spend budget."
+  },
+  "executions": {
+    "search": 100,
+    "shrinking": 0,
+    "replay": 0
+  },
+  "stoppingReason": "budget-exhausted",
+  "incomplete": false,
+  "failureClass": "none",
+  "valueDiscrepancy": false,
+  "discrepancyIsConfirmedViolation": false,
+  "contractVerdict": null,
+  "contractVerdictGuide": "Leave contractVerdict null until you adjudicate by hand. A returned-value discrepancy is not a confirmed candidate violation. Suggested values: candidate-violation, reference-bug, ambiguous-contract, not-a-violation.",
+  "verdictNotes": "",
+  "contractObservationFailures": {
+    "inputMutation": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "resultAliasing": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "unexpectedResultProperties": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    }
+  },
+  "originalFailure": null,
+  "reducedFailure": null,
+  "interruption": null,
+  "replay": {
+    "fastCheckPath": null,
+    "directInput": null,
+    "note": "Replay runs the saved candidate again. It does not call Ollama and it does not change the candidate file."
+  },
+  "fastCheck": {
+    "numRuns": 100,
+    "numSkips": 0,
+    "numShrinks": 0
+  }
+}

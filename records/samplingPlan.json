@@ -1,0 +1,642 @@
+{
+  "samplingRevision": "sampling.v1",
+  "detectionBudget": {
+    "definition": "contract-valid inputs executed during the search phase",
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000,
+    "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+  },
+  "evaluationSeeds": [
+    11,
+    23,
+    42,
+    77,
+    101,
+    256,
+    512,
+    1024,
+    2024,
+    507
+  ],
+  "note": "Sampling revisions are distinct from public-contract versions. A result can be associated with its task samplingHash.",
+  "tasks": [
+    {
+      "taskId": "collapseAsciiWhitespace",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "02193795",
+      "supportedDomain": "text: an ASCII string of 0..64 characters (U+0000..U+007F, controls included).",
+      "methods": {
+        "fastCheck": {
+          "distribution": "Equal-weight (1:1) oneof: (a) a whitespace-heavy alphabet {space, tab, CR, LF, VT, FF, a, b}; (b) binary-ascii (all of U+0000..U+007F). Length 0..64 with size \"max\". Shrinking stays inside the chosen branch."
+        },
+        "random": {
+          "distribution": "Seeded mulberry32. Length uniform on 0..64; each character uniform on the code points 0..127. No shrinking."
+        }
+      },
+      "remainingExclusions": [],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "truncateText",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "7fba3328",
+      "supportedDomain": "text: ASCII 0..64; maxLength: integer 0..64; suffix: ASCII 0..8.",
+      "methods": {
+        "fastCheck": {
+          "distribution": "Equal-weight (1:1) oneof over the (text, maxLength, suffix) tuple: (a) printable-ASCII text and suffix; (b) binary-ascii text and suffix. maxLength is a biased integer 0..64 in both. Shrinking stays inside the chosen branch."
+        },
+        "random": {
+          "distribution": "Seeded mulberry32. text: length uniform 0..64, characters uniform 0..127; maxLength uniform 0..64; suffix: length uniform 0..8, characters uniform 0..127. Drawn independently. No shrinking."
+        }
+      },
+      "remainingExclusions": [],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "splitLiteral",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "29f31505",
+      "supportedDomain": "text: ASCII 0..64; separator: ASCII 1..8; limit: integer 0..1000.",
+      "methods": {
+        "fastCheck": {
+          "distribution": "Equal-weight (1:1) oneof over the (text, separator, limit) tuple: (a) alphabet {a, b, comma, dot, pipe}, separator length 1..3, limit 0..66; (b) binary-ascii text, binary-ascii separator length 1..8, limit 0..1000. Shrinking stays inside the chosen branch."
+        },
+        "random": {
+          "distribution": "Seeded mulberry32. text: length uniform 0..64, characters uniform 0..127; separator: length uniform 1..8, characters uniform 0..127; limit uniform 0..1000. Drawn independently. No shrinking."
+        }
+      },
+      "remainingExclusions": [],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "countSubstring",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "7289994d",
+      "supportedDomain": "text: ASCII 0..64; needle: ASCII 1..8; allowOverlap: boolean.",
+      "methods": {
+        "fastCheck": {
+          "distribution": "Equal-weight (1:1) oneof over the (text, needle, allowOverlap) tuple: (a) alphabet {a, b}, needle length 1..4; (b) binary-ascii text, binary-ascii needle length 1..8. allowOverlap is an unbiased boolean in both. Shrinking stays inside the chosen branch."
+        },
+        "random": {
+          "distribution": "Seeded mulberry32. text: length uniform 0..64, characters uniform 0..127; needle: length uniform 1..8, characters uniform 0..127; allowOverlap uniform boolean. Drawn independently. No shrinking."
+        }
+      },
+      "remainingExclusions": [],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "parseIntegerStrict",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "ea9f18cd",
+      "supportedDomain": "text: any ASCII string 0..64; minValue, maxValue: safe integers (Number.isSafeInteger) with minValue <= maxValue.",
+      "methods": {
+        "fastCheck": {
+          "distribution": "Equal-weight (1:1:1) oneof: (a) well-formed numerals built from a safe-integer value (near 0, near +/-1000, near the safe limits, or anywhere in the safe range via fc.maxSafeInteger), with up to 47 leading zeros and optional sign, paired with bounds from six bracket modes (four contain the value); (b) a fixed list of malformed near-misses with ordered safe-integer bounds; (c) binary-ascii text with ordered safe-integer bounds. Every mapper result is valid, so shrinking stays inside the validator. This arbitrary was frozen during preparation and is unchanged."
+        },
+        "random": {
+          "distribution": "Seeded mulberry32. text: length uniform 0..64, characters uniform 0..127 (simple random, so it is almost always malformed and reaches SyntaxError); minValue, maxValue: two safe integers drawn uniformly over the full safe-integer range and then ordered. No shrinking."
+        }
+      },
+      "remainingExclusions": [
+        "Well-formed numerals whose exact magnitude exceeds the safe-integer range (the RangeError-from-magnitude path, e.g. \"9007199254740992\") are in-domain but are reached only by the unstructured ASCII branch of either method, so neither targets them with meaningful probability. They are covered by frozen baseline cases. Documented as a sampling-probability limitation, not a domain restriction."
+      ],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "compareVersionTriples",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "eb60b794",
+      "supportedDomain": "leftVersion, rightVersion: strings matching ^[0-9]{1,6}\\.[0-9]{1,6}\\.[0-9]{1,6}$ (three dot-separated components of 1..6 digits, leading zeros allowed).",
+      "methods": {
+        "fastCheck": {
+          "distribution": "Equal-weight (1:1) oneof over the (left, right) tuple, versions independent in both: (a) components drawn from digits {0,1,2,9}, length 1..6 (so \"10\" vs \"9\" and equal components are common); (b) components drawn from all digits 0-9, length 1..6. Shrinking stays inside the chosen branch."
+        },
+        "random": {
+          "distribution": "Seeded mulberry32. Each version: three components, each of uniform length 1..6, each digit uniform on 0-9. The two versions are drawn independently (equal versions are rare). No shrinking."
+        }
+      },
+      "remainingExclusions": [],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "uniqueStable",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "905f7f80",
+      "supportedDomain": "values: a dense JSON array of 0..32 integers in [-1000, 1000], Array.prototype, no extra own properties or symbols, no -0.",
+      "methods": {
+        "fastCheck": {
+          "distribution": "fast-check 4.10.2 samples the task arbitrary. For uniqueStable each element is drawn with equal probability from the integers [-3, 3] or from [-1000, 1000], and the length is an integer from 0 to 32 with size \"max\". Shrinking follows that arbitrary and stays inside it. fc.pre drops any value the validator rejects, and a dropped value does not spend budget."
+        },
+        "random": {
+          "distribution": "Seeded mulberry32. The array length is uniform on the integers 0 through 32. Each element is uniform on the integers -1000 through 1000, chosen independently. There is no shrinking and no fast-check bias. The same seed produces the same sequence. Every draw is checked with the task validator before it is executed."
+        }
+      },
+      "remainingExclusions": [],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "chunkArray",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "d7ab9125",
+      "supportedDomain": "values: array of 0..32 integers in [-1000, 1000]; chunkSize: integer 1..1000.",
+      "methods": {
+        "fastCheck": {
+          "distribution": "values: integers in [-1000, 1000], array length 0..32 via fast-check biased integer sizing (size: \"max\"). chunkSize: equal-weight (1:1) oneof of 1..34 and 1..1000 (biased integers). Shrinking stays inside the chosen chunkSize branch."
+        },
+        "random": {
+          "distribution": "values: array length uniform on 0..32, each element uniform on [-1000, 1000]; chunkSize uniform on 1..1000. No shrinking."
+        }
+      },
+      "remainingExclusions": [],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "rotateArray",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "cc6e316a",
+      "supportedDomain": "values: array of 0..32 integers in [-1000, 1000]; offset: integer in [-1000, 1000].",
+      "methods": {
+        "fastCheck": {
+          "distribution": "values: integers in [-1000, 1000], array length 0..32 via fast-check biased integer sizing (size: \"max\"); offset: biased integer in [-1000, 1000] (full domain, unchanged in preparation). Shrinking stays inside the domain."
+        },
+        "random": {
+          "distribution": "values: array length uniform on 0..32, each element uniform on [-1000, 1000]; offset uniform on [-1000, 1000]. No shrinking."
+        }
+      },
+      "remainingExclusions": [],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "mergeClosedIntervals",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "71699bcf",
+      "supportedDomain": "intervals: array of 0..32 plain objects { start, end }, both integers in [-1000, 1000] with start <= end.",
+      "methods": {
+        "fastCheck": {
+          "distribution": "Each element is an equal-weight (1:1) oneof of (a) a short interval (start in [-50, 50], length 0..5) and (b) a full-range interval (two ordered integers in [-1000, 1000]). array length 0..32 via fast-check biased integer sizing (size: \"max\"). Shrinking re-applies the ordering, so it stays valid."
+        },
+        "random": {
+          "distribution": "intervals: array length uniform on 0..32; each interval is two integers uniform on [-1000, 1000], ordered so start <= end. No shrinking."
+        }
+      },
+      "remainingExclusions": [
+        "Interval objects with a null prototype are valid per the validator but are not generated by either method: the objects are literals (Object.prototype) and the harness clones inputs with structuredClone, which does not preserve a null prototype."
+      ],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "groupByKey",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "78e3aa72",
+      "supportedDomain": "items: array of 0..32 plain objects { key, value }, key an ASCII string 0..16, value an integer in [-1000, 1000].",
+      "methods": {
+        "fastCheck": {
+          "distribution": "Each item: key is an equal-weight (1:1:1) oneof of (a) named keys {a, b, \"\", __proto__, constructor, toString, hasOwnProperty}, (b) printable ASCII 0..16, (c) binary-ascii 0..16; value is a biased integer in [-1000, 1000]. array length 0..32 via fast-check biased integer sizing (size: \"max\"). Shrinking stays inside the chosen key branch."
+        },
+        "random": {
+          "distribution": "items: array length uniform on 0..32; each item key length uniform 0..16 with characters uniform 0..127, value uniform on [-1000, 1000]. No shrinking."
+        }
+      },
+      "remainingExclusions": [
+        "Item objects with a null prototype are valid per the validator but are not generated by either method: fast-check record() uses noNullPrototype, and the harness clones inputs with structuredClone, which does not preserve a null prototype."
+      ],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "paginate",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "2a674c73",
+      "supportedDomain": "values: array of 0..32 integers in [-1000, 1000]; pageNumber: integer 1..1000; pageSize: integer 1..1000.",
+      "methods": {
+        "fastCheck": {
+          "distribution": "values: integers in [-1000, 1000], array length 0..32 via fast-check biased integer sizing (size: \"max\"). pageNumber and pageSize each: equal-weight (1:1) oneof of 1..12 and 1..1000 (biased integers). Shrinking stays inside the chosen branch."
+        },
+        "random": {
+          "distribution": "values: array length uniform on 0..32, each element uniform on [-1000, 1000]; pageNumber and pageSize each uniform on 1..1000. No shrinking."
+        }
+      },
+      "remainingExclusions": [],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "clampInteger",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "f833ff23",
+      "supportedDomain": "value, minValue, maxValue: integers in [-1000, 1000] with minValue <= maxValue.",
+      "methods": {
+        "fastCheck": {
+          "distribution": "Three biased integers in [-1000, 1000]; the last two are ordered so minValue <= maxValue (full domain, unchanged in preparation). Shrinking re-applies the ordering."
+        },
+        "random": {
+          "distribution": "Seeded mulberry32. value uniform on [-1000, 1000]; two more uniform on [-1000, 1000], ordered so minValue <= maxValue. No shrinking."
+        }
+      },
+      "remainingExclusions": [],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "divideWithEuclideanRemainder",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "c06d48ab",
+      "supportedDomain": "dividend: integer in [-1000, 1000]; divisor: integer in [-1000, 1000] other than 0.",
+      "methods": {
+        "fastCheck": {
+          "distribution": "dividend: biased integer in [-1000, 1000]; divisor: biased integer in [-1000, 1000] filtered to exclude 0 (the filter does not emit 0 while shrinking). Full domain, unchanged in preparation."
+        },
+        "random": {
+          "distribution": "Seeded mulberry32. dividend uniform on [-1000, 1000]; divisor uniform on the 2000 nonzero values of [-1000, 1000] (drawn from [-1000, 999] with values >= 0 shifted up by 1, so 0 is never produced and nothing is discarded). No shrinking."
+        }
+      },
+      "remainingExclusions": [],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "ceilDivide",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "4203c616",
+      "supportedDomain": "numerator: integer in [-1000, 1000]; positiveDenominator: integer in [1, 1000].",
+      "methods": {
+        "fastCheck": {
+          "distribution": "numerator: biased integer in [-1000, 1000]; positiveDenominator: biased integer in [1, 1000]. Full domain, unchanged in preparation."
+        },
+        "random": {
+          "distribution": "Seeded mulberry32. numerator uniform on [-1000, 1000]; positiveDenominator uniform on [1, 1000]. No shrinking."
+        }
+      },
+      "remainingExclusions": [],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "summarizeIntegers",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "85e988e9",
+      "supportedDomain": "values: array of 0..32 integers in [-1000, 1000].",
+      "methods": {
+        "fastCheck": {
+          "distribution": "values: integers in [-1000, 1000], array length 0..32 via fast-check biased integer sizing (size: \"max\"). Full domain, unchanged in preparation."
+        },
+        "random": {
+          "distribution": "values: array length uniform on 0..32, each element uniform on [-1000, 1000]. No shrinking."
+        }
+      },
+      "remainingExclusions": [],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "binarySearchFirst",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "69768d01",
+      "supportedDomain": "sortedValues: nondecreasing array of 0..32 integers in [-1000, 1000] (duplicates allowed); target: integer in [-1000, 1000].",
+      "methods": {
+        "fastCheck": {
+          "distribution": "Equal-weight (1:1) oneof over the (sortedValues, target) tuple: (a) elements in [-10, 10], target in [-12, 12]; (b) full-range elements and target. Each array is sorted on a copy so it is nondecreasing and the source is not mutated. array length 0..32 via fast-check biased integer sizing (size: \"max\"). Shrinking re-sorts the copy, so it stays valid."
+        },
+        "random": {
+          "distribution": "sortedValues: array length uniform on 0..32, each element uniform on [-1000, 1000], then sorted ascending; target uniform on [-1000, 1000]. No shrinking."
+        }
+      },
+      "remainingExclusions": [],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    },
+    {
+      "taskId": "isGregorianLeapYear",
+      "specVersion": 1,
+      "samplingRevision": "sampling.v1",
+      "samplingHash": "3c8bcbbb",
+      "supportedDomain": "year: integer in [1, 9999].",
+      "methods": {
+        "fastCheck": {
+          "distribution": "Equal-weight (1:1) oneof of (a) a uniform-ish biased year in [1, 9999] and (b) a century year 100, 200, ..., 9900. Full domain, unchanged in preparation. Shrinking stays inside the chosen branch."
+        },
+        "random": {
+          "distribution": "Seeded mulberry32. year uniform on [1, 9999]. No shrinking."
+        }
+      },
+      "remainingExclusions": [],
+      "detectionBudget": {
+        "definition": "contract-valid inputs executed during the search phase",
+        "maxValidInputs": 100,
+        "callTimeoutMs": 2000,
+        "note": "Both methods stop at the first returned-value discrepancy or after maxValidInputs valid inputs, whichever comes first. Shrinking executions and replay executions are counted separately and do not spend the search budget. A timeout stops the run, is recorded as incomplete, and is neither a discrepancy nor shrunk. Every generated input is contract-valid by construction (fast-check arbitraries and the random samplers both produce only valid inputs; fast-check additionally guards with fc.pre, which drops nothing here), so one valid input equals one search execution."
+      },
+      "evaluationSeeds": [
+        11,
+        23,
+        42,
+        77,
+        101,
+        256,
+        512,
+        1024,
+        2024,
+        507
+      ]
+    }
+  ]
+}

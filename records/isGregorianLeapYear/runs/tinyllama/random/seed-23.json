@@ -1,0 +1,128 @@
+{
+  "taskId": "isGregorianLeapYear",
+  "specVersion": 1,
+  "candidateId": "isGregorianLeapYear/tinyllama",
+  "method": "random",
+  "seed": 23,
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "budget": {
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000
+  },
+  "samplingRevision": "sampling.v1",
+  "sampler": {
+    "id": "random",
+    "distribution": "Seeded mulberry32. year uniform on [1, 9999]. No shrinking."
+  },
+  "executions": {
+    "search": 2,
+    "shrinking": 0,
+    "replay": 1
+  },
+  "stoppingReason": "discrepancy",
+  "incomplete": false,
+  "failureClass": "none",
+  "valueDiscrepancy": true,
+  "discrepancyIsConfirmedViolation": false,
+  "contractVerdict": null,
+  "contractVerdictGuide": "Leave contractVerdict null until you adjudicate by hand. A returned-value discrepancy is not a confirmed candidate violation. Suggested values: candidate-violation, reference-bug, ambiguous-contract, not-a-violation.",
+  "verdictNotes": "",
+  "contractObservationFailures": {
+    "inputMutation": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "resultAliasing": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "unexpectedResultProperties": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    }
+  },
+  "originalFailure": {
+    "args": [
+      6682
+    ],
+    "validatorAccepted": true,
+    "size": {
+      "elements": null,
+      "jsonChars": 6
+    },
+    "reference": {
+      "kind": "returned",
+      "value": false,
+      "observations": {
+        "inputBefore": [
+          6682
+        ],
+        "inputAfter": [
+          6682
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      },
+      "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+    },
+    "candidate": {
+      "kind": "threw",
+      "errorName": "Error",
+      "message": "Invalid input domain: year must be in [1, 9999]",
+      "observations": {
+        "inputBefore": [
+          6682
+        ],
+        "inputAfter": [
+          6682
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": null,
+        "extraResultProperties": []
+      }
+    },
+    "valueDiscrepancy": true,
+    "contractObservations": {
+      "reference": {
+        "inputBefore": [
+          6682
+        ],
+        "inputAfter": [
+          6682
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      },
+      "candidate": {
+        "inputBefore": [
+          6682
+        ],
+        "inputAfter": [
+          6682
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": null,
+        "extraResultProperties": []
+      }
+    }
+  },
+  "reducedFailure": null,
+  "interruption": null,
+  "replay": {
+    "fastCheckPath": null,
+    "directInput": [
+      6682
+    ],
+    "note": "Replay runs the saved candidate again. It does not call Ollama and it does not change the candidate file."
+  },
+  "fastCheck": null
+}

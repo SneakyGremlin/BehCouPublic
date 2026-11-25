@@ -1,0 +1,1319 @@
+{
+  "taskId": "groupByKey",
+  "specVersion": 1,
+  "candidateId": "groupByKey/deepseek-coder",
+  "syntaxStatus": "passed",
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "ineligibleReason": null,
+  "cases": [
+    {
+      "args": [
+        [
+          {
+            "key": "b",
+            "value": 1
+          },
+          {
+            "key": "a",
+            "value": 2
+          },
+          {
+            "key": "b",
+            "value": 3
+          }
+        ]
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "b",
+            "items": [
+              {
+                "key": "b",
+                "value": 1
+              },
+              {
+                "key": "b",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "key": "a",
+            "items": [
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          }
+        ]
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "b",
+            "items": [
+              {
+                "key": "b",
+                "value": 1
+              },
+              {
+                "key": "b",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "key": "a",
+            "items": [
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "key": "b",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              },
+              {
+                "key": "b",
+                "value": 3
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "b",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              },
+              {
+                "key": "b",
+                "value": 3
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "b",
+            "items": [
+              {
+                "key": "b",
+                "value": 1
+              },
+              {
+                "key": "b",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "key": "a",
+            "items": [
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "key": "b",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              },
+              {
+                "key": "b",
+                "value": 3
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "b",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              },
+              {
+                "key": "b",
+                "value": 3
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              {
+                "key": "b",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              },
+              {
+                "key": "b",
+                "value": 3
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "b",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              },
+              {
+                "key": "b",
+                "value": 3
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            [
+              {
+                "key": "b",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              },
+              {
+                "key": "b",
+                "value": 3
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "b",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              },
+              {
+                "key": "b",
+                "value": 3
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        []
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": []
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [],
+        "observations": {
+          "inputBefore": [
+            []
+          ],
+          "inputAfter": [
+            []
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [],
+        "observations": {
+          "inputBefore": [
+            []
+          ],
+          "inputAfter": [
+            []
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            []
+          ],
+          "inputAfter": [
+            []
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            []
+          ],
+          "inputAfter": [
+            []
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        [
+          {
+            "key": "a",
+            "value": 1
+          },
+          {
+            "key": "a",
+            "value": 2
+          }
+        ]
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "a",
+            "items": [
+              {
+                "key": "a",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          }
+        ]
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "a",
+            "items": [
+              {
+                "key": "a",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "key": "a",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "a",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "a",
+            "items": [
+              {
+                "key": "a",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "key": "a",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "a",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              {
+                "key": "a",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "a",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            [
+              {
+                "key": "a",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "a",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        [
+          {
+            "key": "__proto__",
+            "value": 1
+          },
+          {
+            "key": "a",
+            "value": 2
+          },
+          {
+            "key": "__proto__",
+            "value": 3
+          }
+        ]
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "__proto__",
+            "items": [
+              {
+                "key": "__proto__",
+                "value": 1
+              },
+              {
+                "key": "__proto__",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "key": "a",
+            "items": [
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          }
+        ]
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "__proto__",
+            "items": [
+              {
+                "key": "__proto__",
+                "value": 1
+              },
+              {
+                "key": "__proto__",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "key": "a",
+            "items": [
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "key": "__proto__",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              },
+              {
+                "key": "__proto__",
+                "value": 3
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "__proto__",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              },
+              {
+                "key": "__proto__",
+                "value": 3
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "__proto__",
+            "items": [
+              {
+                "key": "__proto__",
+                "value": 1
+              },
+              {
+                "key": "__proto__",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "key": "a",
+            "items": [
+              {
+                "key": "a",
+                "value": 2
+              }
+            ]
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "key": "__proto__",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              },
+              {
+                "key": "__proto__",
+                "value": 3
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "__proto__",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              },
+              {
+                "key": "__proto__",
+                "value": 3
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              {
+                "key": "__proto__",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              },
+              {
+                "key": "__proto__",
+                "value": 3
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "__proto__",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              },
+              {
+                "key": "__proto__",
+                "value": 3
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            [
+              {
+                "key": "__proto__",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              },
+              {
+                "key": "__proto__",
+                "value": 3
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "__proto__",
+                "value": 1
+              },
+              {
+                "key": "a",
+                "value": 2
+              },
+              {
+                "key": "__proto__",
+                "value": 3
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        [
+          {
+            "key": "constructor",
+            "value": 1
+          }
+        ]
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "constructor",
+            "items": [
+              {
+                "key": "constructor",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "constructor",
+            "items": [
+              {
+                "key": "constructor",
+                "value": 1
+              }
+            ]
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "key": "constructor",
+                "value": 1
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "constructor",
+                "value": 1
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "constructor",
+            "items": [
+              {
+                "key": "constructor",
+                "value": 1
+              }
+            ]
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "key": "constructor",
+                "value": 1
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "constructor",
+                "value": 1
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              {
+                "key": "constructor",
+                "value": 1
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "constructor",
+                "value": 1
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            [
+              {
+                "key": "constructor",
+                "value": 1
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "constructor",
+                "value": 1
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        [
+          {
+            "key": "",
+            "value": 4
+          },
+          {
+            "key": "a",
+            "value": 5
+          }
+        ]
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "",
+            "items": [
+              {
+                "key": "",
+                "value": 4
+              }
+            ]
+          },
+          {
+            "key": "a",
+            "items": [
+              {
+                "key": "a",
+                "value": 5
+              }
+            ]
+          }
+        ]
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "",
+            "items": [
+              {
+                "key": "",
+                "value": 4
+              }
+            ]
+          },
+          {
+            "key": "a",
+            "items": [
+              {
+                "key": "a",
+                "value": 5
+              }
+            ]
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "key": "",
+                "value": 4
+              },
+              {
+                "key": "a",
+                "value": 5
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "",
+                "value": 4
+              },
+              {
+                "key": "a",
+                "value": 5
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "",
+            "items": [
+              {
+                "key": "",
+                "value": 4
+              }
+            ]
+          },
+          {
+            "key": "a",
+            "items": [
+              {
+                "key": "a",
+                "value": 5
+              }
+            ]
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "key": "",
+                "value": 4
+              },
+              {
+                "key": "a",
+                "value": 5
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "",
+                "value": 4
+              },
+              {
+                "key": "a",
+                "value": 5
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              {
+                "key": "",
+                "value": 4
+              },
+              {
+                "key": "a",
+                "value": 5
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "",
+                "value": 4
+              },
+              {
+                "key": "a",
+                "value": 5
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            [
+              {
+                "key": "",
+                "value": 4
+              },
+              {
+                "key": "a",
+                "value": 5
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "",
+                "value": 4
+              },
+              {
+                "key": "a",
+                "value": 5
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        [
+          {
+            "key": "toString",
+            "value": 1
+          },
+          {
+            "key": "hasOwnProperty",
+            "value": 2
+          }
+        ]
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "toString",
+            "items": [
+              {
+                "key": "toString",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "key": "hasOwnProperty",
+            "items": [
+              {
+                "key": "hasOwnProperty",
+                "value": 2
+              }
+            ]
+          }
+        ]
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "toString",
+            "items": [
+              {
+                "key": "toString",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "key": "hasOwnProperty",
+            "items": [
+              {
+                "key": "hasOwnProperty",
+                "value": 2
+              }
+            ]
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "key": "toString",
+                "value": 1
+              },
+              {
+                "key": "hasOwnProperty",
+                "value": 2
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "toString",
+                "value": 1
+              },
+              {
+                "key": "hasOwnProperty",
+                "value": 2
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [
+          {
+            "key": "toString",
+            "items": [
+              {
+                "key": "toString",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "key": "hasOwnProperty",
+            "items": [
+              {
+                "key": "hasOwnProperty",
+                "value": 2
+              }
+            ]
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "key": "toString",
+                "value": 1
+              },
+              {
+                "key": "hasOwnProperty",
+                "value": 2
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "toString",
+                "value": 1
+              },
+              {
+                "key": "hasOwnProperty",
+                "value": 2
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              {
+                "key": "toString",
+                "value": 1
+              },
+              {
+                "key": "hasOwnProperty",
+                "value": 2
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "toString",
+                "value": 1
+              },
+              {
+                "key": "hasOwnProperty",
+                "value": 2
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            [
+              {
+                "key": "toString",
+                "value": 1
+              },
+              {
+                "key": "hasOwnProperty",
+                "value": 2
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "key": "toString",
+                "value": 1
+              },
+              {
+                "key": "hasOwnProperty",
+                "value": 2
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    }
+  ]
+}

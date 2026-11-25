@@ -1,0 +1,24 @@
+{
+  "taskId": "summarizeIntegers",
+  "specVersion": 1,
+  "candidateId": "summarizeIntegers/tinyllama",
+  "syntaxStatus": "failed",
+  "baselineStatus": "not-checked",
+  "countsTowardAdditionalDetection": false,
+  "ineligibleReason": "syntax-failed",
+  "cases": [
+    {
+      "args": null,
+      "expected": null,
+      "passed": false,
+      "valueDiscrepancy": false,
+      "incomplete": true,
+      "reference": null,
+      "candidate": {
+        "kind": "syntaxFailed",
+        "message": "<tmp>\\candidate.mjs:1\r\nHere's a JavaScripT implementation of the \"summarizeIntegers\" function:\r\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at checkSyntax (node:internal/main/check_syntax:74:5)\r\n\r\nNode.js v20.16.0"
+      },
+      "contractObservations": null
+    }
+  ]
+}

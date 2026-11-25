@@ -1,0 +1,1971 @@
+{
+  "taskId": "parseIntegerStrict",
+  "specVersion": 1,
+  "candidateId": "parseIntegerStrict/deepseek-coder",
+  "syntaxStatus": "passed",
+  "baselineStatus": "failed",
+  "countsTowardAdditionalDetection": false,
+  "ineligibleReason": "baseline-failed",
+  "cases": [
+    {
+      "args": [
+        "-0042",
+        -100,
+        100
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": -42
+      },
+      "passed": false,
+      "valueDiscrepancy": true,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": -42,
+        "observations": {
+          "inputBefore": [
+            "-0042",
+            -100,
+            100
+          ],
+          "inputAfter": [
+            "-0042",
+            -100,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": 42,
+        "observations": {
+          "inputBefore": [
+            "-0042",
+            -100,
+            100
+          ],
+          "inputAfter": [
+            "-0042",
+            -100,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "-0042",
+            -100,
+            100
+          ],
+          "inputAfter": [
+            "-0042",
+            -100,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "-0042",
+            -100,
+            100
+          ],
+          "inputAfter": [
+            "-0042",
+            -100,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "42",
+        0,
+        100
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": 42
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": 42,
+        "observations": {
+          "inputBefore": [
+            "42",
+            0,
+            100
+          ],
+          "inputAfter": [
+            "42",
+            0,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": 42,
+        "observations": {
+          "inputBefore": [
+            "42",
+            0,
+            100
+          ],
+          "inputAfter": [
+            "42",
+            0,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "42",
+            0,
+            100
+          ],
+          "inputAfter": [
+            "42",
+            0,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "42",
+            0,
+            100
+          ],
+          "inputAfter": [
+            "42",
+            0,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "+7",
+        -10,
+        10
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": 7
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": 7,
+        "observations": {
+          "inputBefore": [
+            "+7",
+            -10,
+            10
+          ],
+          "inputAfter": [
+            "+7",
+            -10,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": 7,
+        "observations": {
+          "inputBefore": [
+            "+7",
+            -10,
+            10
+          ],
+          "inputAfter": [
+            "+7",
+            -10,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "+7",
+            -10,
+            10
+          ],
+          "inputAfter": [
+            "+7",
+            -10,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "+7",
+            -10,
+            10
+          ],
+          "inputAfter": [
+            "+7",
+            -10,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "-0",
+        -5,
+        5
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": 0
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": 0,
+        "observations": {
+          "inputBefore": [
+            "-0",
+            -5,
+            5
+          ],
+          "inputAfter": [
+            "-0",
+            -5,
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": 0,
+        "observations": {
+          "inputBefore": [
+            "-0",
+            -5,
+            5
+          ],
+          "inputAfter": [
+            "-0",
+            -5,
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "-0",
+            -5,
+            5
+          ],
+          "inputAfter": [
+            "-0",
+            -5,
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "-0",
+            -5,
+            5
+          ],
+          "inputAfter": [
+            "-0",
+            -5,
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "-000",
+        -1,
+        1
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": 0
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": 0,
+        "observations": {
+          "inputBefore": [
+            "-000",
+            -1,
+            1
+          ],
+          "inputAfter": [
+            "-000",
+            -1,
+            1
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": 0,
+        "observations": {
+          "inputBefore": [
+            "-000",
+            -1,
+            1
+          ],
+          "inputAfter": [
+            "-000",
+            -1,
+            1
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "-000",
+            -1,
+            1
+          ],
+          "inputAfter": [
+            "-000",
+            -1,
+            1
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "-000",
+            -1,
+            1
+          ],
+          "inputAfter": [
+            "-000",
+            -1,
+            1
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "",
+        -10,
+        10
+      ],
+      "expected": {
+        "kind": "threw",
+        "errorName": "SyntaxError"
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Not a strict decimal integer: \"\"",
+        "observations": {
+          "inputBefore": [
+            "",
+            -10,
+            10
+          ],
+          "inputAfter": [
+            "",
+            -10,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Invalid input: ",
+        "observations": {
+          "inputBefore": [
+            "",
+            -10,
+            10
+          ],
+          "inputAfter": [
+            "",
+            -10,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "",
+            -10,
+            10
+          ],
+          "inputAfter": [
+            "",
+            -10,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "",
+            -10,
+            10
+          ],
+          "inputAfter": [
+            "",
+            -10,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "+",
+        0,
+        10
+      ],
+      "expected": {
+        "kind": "threw",
+        "errorName": "SyntaxError"
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Not a strict decimal integer: \"+\"",
+        "observations": {
+          "inputBefore": [
+            "+",
+            0,
+            10
+          ],
+          "inputAfter": [
+            "+",
+            0,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Invalid input: +",
+        "observations": {
+          "inputBefore": [
+            "+",
+            0,
+            10
+          ],
+          "inputAfter": [
+            "+",
+            0,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "+",
+            0,
+            10
+          ],
+          "inputAfter": [
+            "+",
+            0,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "+",
+            0,
+            10
+          ],
+          "inputAfter": [
+            "+",
+            0,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "-",
+        0,
+        10
+      ],
+      "expected": {
+        "kind": "threw",
+        "errorName": "SyntaxError"
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Not a strict decimal integer: \"-\"",
+        "observations": {
+          "inputBefore": [
+            "-",
+            0,
+            10
+          ],
+          "inputAfter": [
+            "-",
+            0,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Invalid input: -",
+        "observations": {
+          "inputBefore": [
+            "-",
+            0,
+            10
+          ],
+          "inputAfter": [
+            "-",
+            0,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "-",
+            0,
+            10
+          ],
+          "inputAfter": [
+            "-",
+            0,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "-",
+            0,
+            10
+          ],
+          "inputAfter": [
+            "-",
+            0,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        " 7",
+        -100,
+        100
+      ],
+      "expected": {
+        "kind": "threw",
+        "errorName": "SyntaxError"
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Not a strict decimal integer: \" 7\"",
+        "observations": {
+          "inputBefore": [
+            " 7",
+            -100,
+            100
+          ],
+          "inputAfter": [
+            " 7",
+            -100,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Invalid input:  7",
+        "observations": {
+          "inputBefore": [
+            " 7",
+            -100,
+            100
+          ],
+          "inputAfter": [
+            " 7",
+            -100,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            " 7",
+            -100,
+            100
+          ],
+          "inputAfter": [
+            " 7",
+            -100,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            " 7",
+            -100,
+            100
+          ],
+          "inputAfter": [
+            " 7",
+            -100,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "7 ",
+        -100,
+        100
+      ],
+      "expected": {
+        "kind": "threw",
+        "errorName": "SyntaxError"
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Not a strict decimal integer: \"7 \"",
+        "observations": {
+          "inputBefore": [
+            "7 ",
+            -100,
+            100
+          ],
+          "inputAfter": [
+            "7 ",
+            -100,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Invalid input: 7 ",
+        "observations": {
+          "inputBefore": [
+            "7 ",
+            -100,
+            100
+          ],
+          "inputAfter": [
+            "7 ",
+            -100,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "7 ",
+            -100,
+            100
+          ],
+          "inputAfter": [
+            "7 ",
+            -100,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "7 ",
+            -100,
+            100
+          ],
+          "inputAfter": [
+            "7 ",
+            -100,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "1.0",
+        0,
+        10
+      ],
+      "expected": {
+        "kind": "threw",
+        "errorName": "SyntaxError"
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Not a strict decimal integer: \"1.0\"",
+        "observations": {
+          "inputBefore": [
+            "1.0",
+            0,
+            10
+          ],
+          "inputAfter": [
+            "1.0",
+            0,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Invalid input: 1.0",
+        "observations": {
+          "inputBefore": [
+            "1.0",
+            0,
+            10
+          ],
+          "inputAfter": [
+            "1.0",
+            0,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "1.0",
+            0,
+            10
+          ],
+          "inputAfter": [
+            "1.0",
+            0,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "1.0",
+            0,
+            10
+          ],
+          "inputAfter": [
+            "1.0",
+            0,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "1e3",
+        0,
+        2000
+      ],
+      "expected": {
+        "kind": "threw",
+        "errorName": "SyntaxError"
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Not a strict decimal integer: \"1e3\"",
+        "observations": {
+          "inputBefore": [
+            "1e3",
+            0,
+            2000
+          ],
+          "inputAfter": [
+            "1e3",
+            0,
+            2000
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Invalid input: 1e3",
+        "observations": {
+          "inputBefore": [
+            "1e3",
+            0,
+            2000
+          ],
+          "inputAfter": [
+            "1e3",
+            0,
+            2000
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "1e3",
+            0,
+            2000
+          ],
+          "inputAfter": [
+            "1e3",
+            0,
+            2000
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "1e3",
+            0,
+            2000
+          ],
+          "inputAfter": [
+            "1e3",
+            0,
+            2000
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "0x1F",
+        0,
+        100
+      ],
+      "expected": {
+        "kind": "threw",
+        "errorName": "SyntaxError"
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Not a strict decimal integer: \"0x1F\"",
+        "observations": {
+          "inputBefore": [
+            "0x1F",
+            0,
+            100
+          ],
+          "inputAfter": [
+            "0x1F",
+            0,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Invalid input: 0x1F",
+        "observations": {
+          "inputBefore": [
+            "0x1F",
+            0,
+            100
+          ],
+          "inputAfter": [
+            "0x1F",
+            0,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "0x1F",
+            0,
+            100
+          ],
+          "inputAfter": [
+            "0x1F",
+            0,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "0x1F",
+            0,
+            100
+          ],
+          "inputAfter": [
+            "0x1F",
+            0,
+            100
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "1_000",
+        0,
+        2000
+      ],
+      "expected": {
+        "kind": "threw",
+        "errorName": "SyntaxError"
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Not a strict decimal integer: \"1_000\"",
+        "observations": {
+          "inputBefore": [
+            "1_000",
+            0,
+            2000
+          ],
+          "inputAfter": [
+            "1_000",
+            0,
+            2000
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Invalid input: 1_000",
+        "observations": {
+          "inputBefore": [
+            "1_000",
+            0,
+            2000
+          ],
+          "inputAfter": [
+            "1_000",
+            0,
+            2000
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "1_000",
+            0,
+            2000
+          ],
+          "inputAfter": [
+            "1_000",
+            0,
+            2000
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "1_000",
+            0,
+            2000
+          ],
+          "inputAfter": [
+            "1_000",
+            0,
+            2000
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "+-1",
+        -10,
+        10
+      ],
+      "expected": {
+        "kind": "threw",
+        "errorName": "SyntaxError"
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Not a strict decimal integer: \"+-1\"",
+        "observations": {
+          "inputBefore": [
+            "+-1",
+            -10,
+            10
+          ],
+          "inputAfter": [
+            "+-1",
+            -10,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Invalid input: +-1",
+        "observations": {
+          "inputBefore": [
+            "+-1",
+            -10,
+            10
+          ],
+          "inputAfter": [
+            "+-1",
+            -10,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "+-1",
+            -10,
+            10
+          ],
+          "inputAfter": [
+            "+-1",
+            -10,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "+-1",
+            -10,
+            10
+          ],
+          "inputAfter": [
+            "+-1",
+            -10,
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        " 9",
+        0,
+        1
+      ],
+      "expected": {
+        "kind": "threw",
+        "errorName": "SyntaxError"
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Not a strict decimal integer: \" 9\"",
+        "observations": {
+          "inputBefore": [
+            " 9",
+            0,
+            1
+          ],
+          "inputAfter": [
+            " 9",
+            0,
+            1
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "threw",
+        "errorName": "SyntaxError",
+        "message": "Invalid input:  9",
+        "observations": {
+          "inputBefore": [
+            " 9",
+            0,
+            1
+          ],
+          "inputAfter": [
+            " 9",
+            0,
+            1
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            " 9",
+            0,
+            1
+          ],
+          "inputAfter": [
+            " 9",
+            0,
+            1
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            " 9",
+            0,
+            1
+          ],
+          "inputAfter": [
+            " 9",
+            0,
+            1
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "9007199254740991",
+        -9007199254740991,
+        9007199254740991
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": 9007199254740991
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": 9007199254740991,
+        "observations": {
+          "inputBefore": [
+            "9007199254740991",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputAfter": [
+            "9007199254740991",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": true,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": 9007199254740991,
+        "observations": {
+          "inputBefore": [
+            "9007199254740991",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputAfter": [
+            "9007199254740991",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": true,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "9007199254740991",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputAfter": [
+            "9007199254740991",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": true,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "9007199254740991",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputAfter": [
+            "9007199254740991",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": true,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "9007199254740992",
+        -9007199254740991,
+        9007199254740991
+      ],
+      "expected": {
+        "kind": "threw",
+        "errorName": "RangeError"
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "threw",
+        "errorName": "RangeError",
+        "message": "9007199254740992 is outside the safe-integer range",
+        "observations": {
+          "inputBefore": [
+            "9007199254740992",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputAfter": [
+            "9007199254740992",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "threw",
+        "errorName": "RangeError",
+        "message": "Out of range: 9007199254740992",
+        "observations": {
+          "inputBefore": [
+            "9007199254740992",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputAfter": [
+            "9007199254740992",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "9007199254740992",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputAfter": [
+            "9007199254740992",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "9007199254740992",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputAfter": [
+            "9007199254740992",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "-9007199254740991",
+        -9007199254740991,
+        9007199254740991
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": -9007199254740991
+      },
+      "passed": false,
+      "valueDiscrepancy": true,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": -9007199254740991,
+        "observations": {
+          "inputBefore": [
+            "-9007199254740991",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputAfter": [
+            "-9007199254740991",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": true,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": 9007199254740991,
+        "observations": {
+          "inputBefore": [
+            "-9007199254740991",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputAfter": [
+            "-9007199254740991",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": true,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "-9007199254740991",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputAfter": [
+            "-9007199254740991",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": true,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "-9007199254740991",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputAfter": [
+            "-9007199254740991",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": true,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "-9007199254740992",
+        -9007199254740991,
+        9007199254740991
+      ],
+      "expected": {
+        "kind": "threw",
+        "errorName": "RangeError"
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "threw",
+        "errorName": "RangeError",
+        "message": "-9007199254740992 is outside the safe-integer range",
+        "observations": {
+          "inputBefore": [
+            "-9007199254740992",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputAfter": [
+            "-9007199254740992",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "threw",
+        "errorName": "RangeError",
+        "message": "Out of range: -9007199254740992",
+        "observations": {
+          "inputBefore": [
+            "-9007199254740992",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputAfter": [
+            "-9007199254740992",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "-9007199254740992",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputAfter": [
+            "-9007199254740992",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "-9007199254740992",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputAfter": [
+            "-9007199254740992",
+            -9007199254740991,
+            9007199254740991
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "5",
+        0,
+        5
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": 5
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": 5,
+        "observations": {
+          "inputBefore": [
+            "5",
+            0,
+            5
+          ],
+          "inputAfter": [
+            "5",
+            0,
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": true,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": 5,
+        "observations": {
+          "inputBefore": [
+            "5",
+            0,
+            5
+          ],
+          "inputAfter": [
+            "5",
+            0,
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": true,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "5",
+            0,
+            5
+          ],
+          "inputAfter": [
+            "5",
+            0,
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": true,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "5",
+            0,
+            5
+          ],
+          "inputAfter": [
+            "5",
+            0,
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": true,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "0",
+        0,
+        5
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": 0
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": 0,
+        "observations": {
+          "inputBefore": [
+            "0",
+            0,
+            5
+          ],
+          "inputAfter": [
+            "0",
+            0,
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": true,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": 0,
+        "observations": {
+          "inputBefore": [
+            "0",
+            0,
+            5
+          ],
+          "inputAfter": [
+            "0",
+            0,
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": true,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "0",
+            0,
+            5
+          ],
+          "inputAfter": [
+            "0",
+            0,
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": true,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "0",
+            0,
+            5
+          ],
+          "inputAfter": [
+            "0",
+            0,
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": true,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "6",
+        0,
+        5
+      ],
+      "expected": {
+        "kind": "threw",
+        "errorName": "RangeError"
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "threw",
+        "errorName": "RangeError",
+        "message": "6 is outside [0, 5]",
+        "observations": {
+          "inputBefore": [
+            "6",
+            0,
+            5
+          ],
+          "inputAfter": [
+            "6",
+            0,
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "threw",
+        "errorName": "RangeError",
+        "message": "Out of range: 6",
+        "observations": {
+          "inputBefore": [
+            "6",
+            0,
+            5
+          ],
+          "inputAfter": [
+            "6",
+            0,
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "6",
+            0,
+            5
+          ],
+          "inputAfter": [
+            "6",
+            0,
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "6",
+            0,
+            5
+          ],
+          "inputAfter": [
+            "6",
+            0,
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": null,
+          "extraResultProperties": []
+        }
+      }
+    }
+  ]
+}

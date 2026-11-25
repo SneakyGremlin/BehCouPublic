@@ -1,0 +1,833 @@
+{
+  "taskId": "splitLiteral",
+  "specVersion": 1,
+  "candidateId": "splitLiteral/qwen2.5-coder-1.5b",
+  "syntaxStatus": "passed",
+  "baselineStatus": "failed",
+  "countsTowardAdditionalDetection": false,
+  "ineligibleReason": "baseline-failed",
+  "cases": [
+    {
+      "args": [
+        "a,b,,c",
+        ",",
+        3
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          "a",
+          "b",
+          ""
+        ]
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          "a",
+          "b",
+          ""
+        ],
+        "observations": {
+          "inputBefore": [
+            "a,b,,c",
+            ",",
+            3
+          ],
+          "inputAfter": [
+            "a,b,,c",
+            ",",
+            3
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [
+          "a",
+          "b",
+          ""
+        ],
+        "observations": {
+          "inputBefore": [
+            "a,b,,c",
+            ",",
+            3
+          ],
+          "inputAfter": [
+            "a,b,,c",
+            ",",
+            3
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "a,b,,c",
+            ",",
+            3
+          ],
+          "inputAfter": [
+            "a,b,,c",
+            ",",
+            3
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "a,b,,c",
+            ",",
+            3
+          ],
+          "inputAfter": [
+            "a,b,,c",
+            ",",
+            3
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "a,b",
+        ",",
+        0
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": []
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [],
+        "observations": {
+          "inputBefore": [
+            "a,b",
+            ",",
+            0
+          ],
+          "inputAfter": [
+            "a,b",
+            ",",
+            0
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [],
+        "observations": {
+          "inputBefore": [
+            "a,b",
+            ",",
+            0
+          ],
+          "inputAfter": [
+            "a,b",
+            ",",
+            0
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "a,b",
+            ",",
+            0
+          ],
+          "inputAfter": [
+            "a,b",
+            ",",
+            0
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "a,b",
+            ",",
+            0
+          ],
+          "inputAfter": [
+            "a,b",
+            ",",
+            0
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "",
+        ",",
+        1
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          ""
+        ]
+      },
+      "passed": false,
+      "valueDiscrepancy": true,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          ""
+        ],
+        "observations": {
+          "inputBefore": [
+            "",
+            ",",
+            1
+          ],
+          "inputAfter": [
+            "",
+            ",",
+            1
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [],
+        "observations": {
+          "inputBefore": [
+            "",
+            ",",
+            1
+          ],
+          "inputAfter": [
+            "",
+            ",",
+            1
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "",
+            ",",
+            1
+          ],
+          "inputAfter": [
+            "",
+            ",",
+            1
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "",
+            ",",
+            1
+          ],
+          "inputAfter": [
+            "",
+            ",",
+            1
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "abc",
+        ",",
+        5
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          "abc"
+        ]
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          "abc"
+        ],
+        "observations": {
+          "inputBefore": [
+            "abc",
+            ",",
+            5
+          ],
+          "inputAfter": [
+            "abc",
+            ",",
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [
+          "abc"
+        ],
+        "observations": {
+          "inputBefore": [
+            "abc",
+            ",",
+            5
+          ],
+          "inputAfter": [
+            "abc",
+            ",",
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "abc",
+            ",",
+            5
+          ],
+          "inputAfter": [
+            "abc",
+            ",",
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "abc",
+            ",",
+            5
+          ],
+          "inputAfter": [
+            "abc",
+            ",",
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "a,b",
+        ",",
+        10
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          "a",
+          "b"
+        ]
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          "a",
+          "b"
+        ],
+        "observations": {
+          "inputBefore": [
+            "a,b",
+            ",",
+            10
+          ],
+          "inputAfter": [
+            "a,b",
+            ",",
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [
+          "a",
+          "b"
+        ],
+        "observations": {
+          "inputBefore": [
+            "a,b",
+            ",",
+            10
+          ],
+          "inputAfter": [
+            "a,b",
+            ",",
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "a,b",
+            ",",
+            10
+          ],
+          "inputAfter": [
+            "a,b",
+            ",",
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "a,b",
+            ",",
+            10
+          ],
+          "inputAfter": [
+            "a,b",
+            ",",
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        ",a,",
+        ",",
+        10
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          "",
+          "a",
+          ""
+        ]
+      },
+      "passed": false,
+      "valueDiscrepancy": true,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          "",
+          "a",
+          ""
+        ],
+        "observations": {
+          "inputBefore": [
+            ",a,",
+            ",",
+            10
+          ],
+          "inputAfter": [
+            ",a,",
+            ",",
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [
+          "",
+          "a"
+        ],
+        "observations": {
+          "inputBefore": [
+            ",a,",
+            ",",
+            10
+          ],
+          "inputAfter": [
+            ",a,",
+            ",",
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            ",a,",
+            ",",
+            10
+          ],
+          "inputAfter": [
+            ",a,",
+            ",",
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            ",a,",
+            ",",
+            10
+          ],
+          "inputAfter": [
+            ",a,",
+            ",",
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "aaa",
+        "aa",
+        10
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          "",
+          "a"
+        ]
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          "",
+          "a"
+        ],
+        "observations": {
+          "inputBefore": [
+            "aaa",
+            "aa",
+            10
+          ],
+          "inputAfter": [
+            "aaa",
+            "aa",
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [
+          "",
+          "a"
+        ],
+        "observations": {
+          "inputBefore": [
+            "aaa",
+            "aa",
+            10
+          ],
+          "inputAfter": [
+            "aaa",
+            "aa",
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "aaa",
+            "aa",
+            10
+          ],
+          "inputAfter": [
+            "aaa",
+            "aa",
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "aaa",
+            "aa",
+            10
+          ],
+          "inputAfter": [
+            "aaa",
+            "aa",
+            10
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "a.b",
+        ".",
+        5
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          "a",
+          "b"
+        ]
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          "a",
+          "b"
+        ],
+        "observations": {
+          "inputBefore": [
+            "a.b",
+            ".",
+            5
+          ],
+          "inputAfter": [
+            "a.b",
+            ".",
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [
+          "a",
+          "b"
+        ],
+        "observations": {
+          "inputBefore": [
+            "a.b",
+            ".",
+            5
+          ],
+          "inputAfter": [
+            "a.b",
+            ".",
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "a.b",
+            ".",
+            5
+          ],
+          "inputAfter": [
+            "a.b",
+            ".",
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "a.b",
+            ".",
+            5
+          ],
+          "inputAfter": [
+            "a.b",
+            ".",
+            5
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        "a,b,c",
+        ",",
+        1
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          "a"
+        ]
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          "a"
+        ],
+        "observations": {
+          "inputBefore": [
+            "a,b,c",
+            ",",
+            1
+          ],
+          "inputAfter": [
+            "a,b,c",
+            ",",
+            1
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [
+          "a"
+        ],
+        "observations": {
+          "inputBefore": [
+            "a,b,c",
+            ",",
+            1
+          ],
+          "inputAfter": [
+            "a,b,c",
+            ",",
+            1
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            "a,b,c",
+            ",",
+            1
+          ],
+          "inputAfter": [
+            "a,b,c",
+            ",",
+            1
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            "a,b,c",
+            ",",
+            1
+          ],
+          "inputAfter": [
+            "a,b,c",
+            ",",
+            1
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    }
+  ]
+}

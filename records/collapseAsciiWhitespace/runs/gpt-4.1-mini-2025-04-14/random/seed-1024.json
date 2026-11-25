@@ -1,0 +1,194 @@
+{
+  "taskId": "collapseAsciiWhitespace",
+  "specVersion": 1,
+  "candidateId": "collapseAsciiWhitespace/gpt-4.1-mini-2025-04-14",
+  "method": "random",
+  "seed": 1024,
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "budget": {
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000
+  },
+  "samplingRevision": "sampling.v1",
+  "sampler": {
+    "id": "random",
+    "distribution": "Seeded mulberry32. Length uniform on 0..64; each character uniform on the code points 0..127. No shrinking."
+  },
+  "executions": {
+    "search": 18,
+    "shrinking": 0,
+    "replay": 1
+  },
+  "stoppingReason": "discrepancy",
+  "incomplete": false,
+  "failureClass": "none",
+  "valueDiscrepancy": true,
+  "discrepancyIsConfirmedViolation": false,
+  "contractVerdict": null,
+  "contractVerdictGuide": "Leave contractVerdict null until you adjudicate by hand. A returned-value discrepancy is not a confirmed candidate violation. Suggested values: candidate-violation, reference-bug, ambiguous-contract, not-a-violation.",
+  "verdictNotes": "",
+  "contractObservationFailures": {
+    "inputMutation": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "resultAliasing": {
+      "count": 7,
+      "first": {
+        "args": [
+          "twNL:\u0003T"
+        ],
+        "validatorAccepted": true,
+        "size": {
+          "elements": null,
+          "jsonChars": 16
+        },
+        "reference": {
+          "kind": "returned",
+          "value": "twNL:\u0003T",
+          "observations": {
+            "inputBefore": [
+              "twNL:\u0003T"
+            ],
+            "inputAfter": [
+              "twNL:\u0003T"
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": true,
+            "extraResultProperties": []
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "candidate": {
+          "kind": "returned",
+          "value": "twNL:\u0003T",
+          "observations": {
+            "inputBefore": [
+              "twNL:\u0003T"
+            ],
+            "inputAfter": [
+              "twNL:\u0003T"
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": true,
+            "extraResultProperties": []
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "valueDiscrepancy": false,
+        "contractObservations": {
+          "reference": {
+            "inputBefore": [
+              "twNL:\u0003T"
+            ],
+            "inputAfter": [
+              "twNL:\u0003T"
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": true,
+            "extraResultProperties": []
+          },
+          "candidate": {
+            "inputBefore": [
+              "twNL:\u0003T"
+            ],
+            "inputAfter": [
+              "twNL:\u0003T"
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": true,
+            "extraResultProperties": []
+          }
+        }
+      },
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "unexpectedResultProperties": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    }
+  },
+  "originalFailure": {
+    "args": [
+      "<QUUd\u0017\f"
+    ],
+    "validatorAccepted": true,
+    "size": {
+      "elements": null,
+      "jsonChars": 18
+    },
+    "reference": {
+      "kind": "returned",
+      "value": "<QUUd\u0017\f",
+      "observations": {
+        "inputBefore": [
+          "<QUUd\u0017\f"
+        ],
+        "inputAfter": [
+          "<QUUd\u0017\f"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": true,
+        "extraResultProperties": []
+      },
+      "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+    },
+    "candidate": {
+      "kind": "returned",
+      "value": "<QUUd\u0017",
+      "observations": {
+        "inputBefore": [
+          "<QUUd\u0017\f"
+        ],
+        "inputAfter": [
+          "<QUUd\u0017\f"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      },
+      "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+    },
+    "valueDiscrepancy": true,
+    "contractObservations": {
+      "reference": {
+        "inputBefore": [
+          "<QUUd\u0017\f"
+        ],
+        "inputAfter": [
+          "<QUUd\u0017\f"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": true,
+        "extraResultProperties": []
+      },
+      "candidate": {
+        "inputBefore": [
+          "<QUUd\u0017\f"
+        ],
+        "inputAfter": [
+          "<QUUd\u0017\f"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      }
+    }
+  },
+  "reducedFailure": null,
+  "interruption": null,
+  "replay": {
+    "fastCheckPath": null,
+    "directInput": [
+      "<QUUd\u0017\f"
+    ],
+    "note": "Replay runs the saved candidate again. It does not call Ollama and it does not change the candidate file."
+  },
+  "fastCheck": null
+}

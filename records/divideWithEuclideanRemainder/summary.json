@@ -1,0 +1,44 @@
+{
+  "taskId": "divideWithEuclideanRemainder",
+  "specVersion": 1,
+  "samplingRevision": "sampling.v1",
+  "samplingHash": "c06d48ab",
+  "planned": 60,
+  "executed": 0,
+  "ineligible": 60,
+  "incomplete": 0,
+  "additionalDetectionDenominator": 0,
+  "note": "Executed runs are searches that started. Incomplete runs timed out or stopped before a complete search and are included in executed. Ineligible runs were not started. A discrepancy is not a confirmed candidate violation. This grid does not call Ollama.",
+  "candidates": [
+    {
+      "candidateId": "divideWithEuclideanRemainder/tinyllama",
+      "model": "tinyllama:latest",
+      "eligibility": "syntax-failed",
+      "baselineStatus": "not-checked",
+      "countsTowardAdditionalDetection": false,
+      "executedRuns": 0,
+      "ineligibleRuns": 20,
+      "incompleteRuns": 0
+    },
+    {
+      "candidateId": "divideWithEuclideanRemainder/qwen2.5-coder-1.5b",
+      "model": "qwen2.5-coder:1.5b",
+      "eligibility": "baseline-failed",
+      "baselineStatus": "failed",
+      "countsTowardAdditionalDetection": false,
+      "executedRuns": 0,
+      "ineligibleRuns": 20,
+      "incompleteRuns": 0
+    },
+    {
+      "candidateId": "divideWithEuclideanRemainder/deepseek-coder",
+      "model": "deepseek-coder:latest",
+      "eligibility": "baseline-failed",
+      "baselineStatus": "failed",
+      "countsTowardAdditionalDetection": false,
+      "executedRuns": 0,
+      "ineligibleRuns": 20,
+      "incompleteRuns": 0
+    }
+  ]
+}

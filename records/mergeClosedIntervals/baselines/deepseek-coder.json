@@ -1,0 +1,946 @@
+{
+  "taskId": "mergeClosedIntervals",
+  "specVersion": 1,
+  "candidateId": "mergeClosedIntervals/deepseek-coder",
+  "syntaxStatus": "passed",
+  "baselineStatus": "failed",
+  "countsTowardAdditionalDetection": false,
+  "ineligibleReason": "load-failed",
+  "cases": [
+    {
+      "args": [
+        [
+          {
+            "start": 5,
+            "end": 7
+          },
+          {
+            "start": 1,
+            "end": 3
+          },
+          {
+            "start": 3,
+            "end": 4
+          },
+          {
+            "start": 8,
+            "end": 9
+          }
+        ]
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          {
+            "start": 1,
+            "end": 4
+          },
+          {
+            "start": 5,
+            "end": 7
+          },
+          {
+            "start": 8,
+            "end": 9
+          }
+        ]
+      },
+      "passed": false,
+      "valueDiscrepancy": false,
+      "incomplete": true,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          {
+            "start": 1,
+            "end": 4
+          },
+          {
+            "start": 5,
+            "end": 7
+          },
+          {
+            "start": 8,
+            "end": 9
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "start": 5,
+                "end": 7
+              },
+              {
+                "start": 1,
+                "end": 3
+              },
+              {
+                "start": 3,
+                "end": 4
+              },
+              {
+                "start": 8,
+                "end": 9
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "start": 5,
+                "end": 7
+              },
+              {
+                "start": 1,
+                "end": 3
+              },
+              {
+                "start": 3,
+                "end": 4
+              },
+              {
+                "start": 8,
+                "end": 9
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "loadFailed",
+        "stage": "loading",
+        "elapsedMs": 41,
+        "message": "candidates\\mergeClosedIntervals\\deepseek-coder.mjs does not export a function named \"mergeClosedIntervals\"."
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              {
+                "start": 5,
+                "end": 7
+              },
+              {
+                "start": 1,
+                "end": 3
+              },
+              {
+                "start": 3,
+                "end": 4
+              },
+              {
+                "start": 8,
+                "end": 9
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "start": 5,
+                "end": 7
+              },
+              {
+                "start": 1,
+                "end": 3
+              },
+              {
+                "start": 3,
+                "end": 4
+              },
+              {
+                "start": 8,
+                "end": 9
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": null
+      }
+    },
+    {
+      "args": [
+        []
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": []
+      },
+      "passed": false,
+      "valueDiscrepancy": false,
+      "incomplete": true,
+      "reference": {
+        "kind": "returned",
+        "value": [],
+        "observations": {
+          "inputBefore": [
+            []
+          ],
+          "inputAfter": [
+            []
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "loadFailed",
+        "stage": "loading",
+        "elapsedMs": 39,
+        "message": "candidates\\mergeClosedIntervals\\deepseek-coder.mjs does not export a function named \"mergeClosedIntervals\"."
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            []
+          ],
+          "inputAfter": [
+            []
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": null
+      }
+    },
+    {
+      "args": [
+        [
+          {
+            "start": 1,
+            "end": 2
+          },
+          {
+            "start": 3,
+            "end": 4
+          }
+        ]
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          {
+            "start": 1,
+            "end": 2
+          },
+          {
+            "start": 3,
+            "end": 4
+          }
+        ]
+      },
+      "passed": false,
+      "valueDiscrepancy": false,
+      "incomplete": true,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          {
+            "start": 1,
+            "end": 2
+          },
+          {
+            "start": 3,
+            "end": 4
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "start": 1,
+                "end": 2
+              },
+              {
+                "start": 3,
+                "end": 4
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "start": 1,
+                "end": 2
+              },
+              {
+                "start": 3,
+                "end": 4
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "loadFailed",
+        "stage": "loading",
+        "elapsedMs": 62,
+        "message": "candidates\\mergeClosedIntervals\\deepseek-coder.mjs does not export a function named \"mergeClosedIntervals\"."
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              {
+                "start": 1,
+                "end": 2
+              },
+              {
+                "start": 3,
+                "end": 4
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "start": 1,
+                "end": 2
+              },
+              {
+                "start": 3,
+                "end": 4
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": null
+      }
+    },
+    {
+      "args": [
+        [
+          {
+            "start": 1,
+            "end": 3
+          },
+          {
+            "start": 3,
+            "end": 5
+          }
+        ]
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          {
+            "start": 1,
+            "end": 5
+          }
+        ]
+      },
+      "passed": false,
+      "valueDiscrepancy": false,
+      "incomplete": true,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          {
+            "start": 1,
+            "end": 5
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "start": 1,
+                "end": 3
+              },
+              {
+                "start": 3,
+                "end": 5
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "start": 1,
+                "end": 3
+              },
+              {
+                "start": 3,
+                "end": 5
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "loadFailed",
+        "stage": "loading",
+        "elapsedMs": 38,
+        "message": "candidates\\mergeClosedIntervals\\deepseek-coder.mjs does not export a function named \"mergeClosedIntervals\"."
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              {
+                "start": 1,
+                "end": 3
+              },
+              {
+                "start": 3,
+                "end": 5
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "start": 1,
+                "end": 3
+              },
+              {
+                "start": 3,
+                "end": 5
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": null
+      }
+    },
+    {
+      "args": [
+        [
+          {
+            "start": 5,
+            "end": 6
+          },
+          {
+            "start": 1,
+            "end": 2
+          }
+        ]
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          {
+            "start": 1,
+            "end": 2
+          },
+          {
+            "start": 5,
+            "end": 6
+          }
+        ]
+      },
+      "passed": false,
+      "valueDiscrepancy": false,
+      "incomplete": true,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          {
+            "start": 1,
+            "end": 2
+          },
+          {
+            "start": 5,
+            "end": 6
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "start": 5,
+                "end": 6
+              },
+              {
+                "start": 1,
+                "end": 2
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "start": 5,
+                "end": 6
+              },
+              {
+                "start": 1,
+                "end": 2
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "loadFailed",
+        "stage": "loading",
+        "elapsedMs": 42,
+        "message": "candidates\\mergeClosedIntervals\\deepseek-coder.mjs does not export a function named \"mergeClosedIntervals\"."
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              {
+                "start": 5,
+                "end": 6
+              },
+              {
+                "start": 1,
+                "end": 2
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "start": 5,
+                "end": 6
+              },
+              {
+                "start": 1,
+                "end": 2
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": null
+      }
+    },
+    {
+      "args": [
+        [
+          {
+            "start": 1,
+            "end": 10
+          },
+          {
+            "start": 2,
+            "end": 3
+          },
+          {
+            "start": 4,
+            "end": 4
+          }
+        ]
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          {
+            "start": 1,
+            "end": 10
+          }
+        ]
+      },
+      "passed": false,
+      "valueDiscrepancy": false,
+      "incomplete": true,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          {
+            "start": 1,
+            "end": 10
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "start": 1,
+                "end": 10
+              },
+              {
+                "start": 2,
+                "end": 3
+              },
+              {
+                "start": 4,
+                "end": 4
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "start": 1,
+                "end": 10
+              },
+              {
+                "start": 2,
+                "end": 3
+              },
+              {
+                "start": 4,
+                "end": 4
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "loadFailed",
+        "stage": "loading",
+        "elapsedMs": 43,
+        "message": "candidates\\mergeClosedIntervals\\deepseek-coder.mjs does not export a function named \"mergeClosedIntervals\"."
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              {
+                "start": 1,
+                "end": 10
+              },
+              {
+                "start": 2,
+                "end": 3
+              },
+              {
+                "start": 4,
+                "end": 4
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "start": 1,
+                "end": 10
+              },
+              {
+                "start": 2,
+                "end": 3
+              },
+              {
+                "start": 4,
+                "end": 4
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": null
+      }
+    },
+    {
+      "args": [
+        [
+          {
+            "start": 2,
+            "end": 2
+          }
+        ]
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          {
+            "start": 2,
+            "end": 2
+          }
+        ]
+      },
+      "passed": false,
+      "valueDiscrepancy": false,
+      "incomplete": true,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          {
+            "start": 2,
+            "end": 2
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "start": 2,
+                "end": 2
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "start": 2,
+                "end": 2
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "loadFailed",
+        "stage": "loading",
+        "elapsedMs": 34,
+        "message": "candidates\\mergeClosedIntervals\\deepseek-coder.mjs does not export a function named \"mergeClosedIntervals\"."
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              {
+                "start": 2,
+                "end": 2
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "start": 2,
+                "end": 2
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": null
+      }
+    },
+    {
+      "args": [
+        [
+          {
+            "start": -5,
+            "end": -1
+          },
+          {
+            "start": -3,
+            "end": 0
+          }
+        ]
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          {
+            "start": -5,
+            "end": 0
+          }
+        ]
+      },
+      "passed": false,
+      "valueDiscrepancy": false,
+      "incomplete": true,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          {
+            "start": -5,
+            "end": 0
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "start": -5,
+                "end": -1
+              },
+              {
+                "start": -3,
+                "end": 0
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "start": -5,
+                "end": -1
+              },
+              {
+                "start": -3,
+                "end": 0
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "loadFailed",
+        "stage": "loading",
+        "elapsedMs": 39,
+        "message": "candidates\\mergeClosedIntervals\\deepseek-coder.mjs does not export a function named \"mergeClosedIntervals\"."
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              {
+                "start": -5,
+                "end": -1
+              },
+              {
+                "start": -3,
+                "end": 0
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "start": -5,
+                "end": -1
+              },
+              {
+                "start": -3,
+                "end": 0
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": null
+      }
+    },
+    {
+      "args": [
+        [
+          {
+            "start": 1,
+            "end": 4
+          },
+          {
+            "start": 1,
+            "end": 4
+          }
+        ]
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          {
+            "start": 1,
+            "end": 4
+          }
+        ]
+      },
+      "passed": false,
+      "valueDiscrepancy": false,
+      "incomplete": true,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          {
+            "start": 1,
+            "end": 4
+          }
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              {
+                "start": 1,
+                "end": 4
+              },
+              {
+                "start": 1,
+                "end": 4
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "start": 1,
+                "end": 4
+              },
+              {
+                "start": 1,
+                "end": 4
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "loadFailed",
+        "stage": "loading",
+        "elapsedMs": 39,
+        "message": "candidates\\mergeClosedIntervals\\deepseek-coder.mjs does not export a function named \"mergeClosedIntervals\"."
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              {
+                "start": 1,
+                "end": 4
+              },
+              {
+                "start": 1,
+                "end": 4
+              }
+            ]
+          ],
+          "inputAfter": [
+            [
+              {
+                "start": 1,
+                "end": 4
+              },
+              {
+                "start": 1,
+                "end": 4
+              }
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "taskId": "collapseAsciiWhitespace",
+  "specVersion": 1,
+  "candidateId": "collapseAsciiWhitespace/gpt-4.1-mini-2025-04-14",
+  "method": "random",
+  "seed": 2024,
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "budget": {
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000
+  },
+  "samplingRevision": "sampling.v1",
+  "sampler": {
+    "id": "random",
+    "distribution": "Seeded mulberry32. Length uniform on 0..64; each character uniform on the code points 0..127. No shrinking."
+  },
+  "executions": {
+    "search": 26,
+    "shrinking": 0,
+    "replay": 1
+  },
+  "stoppingReason": "discrepancy",
+  "incomplete": false,
+  "failureClass": "none",
+  "valueDiscrepancy": true,
+  "discrepancyIsConfirmedViolation": false,
+  "contractVerdict": null,
+  "contractVerdictGuide": "Leave contractVerdict null until you adjudicate by hand. A returned-value discrepancy is not a confirmed candidate violation. Suggested values: candidate-violation, reference-bug, ambiguous-contract, not-a-violation.",
+  "verdictNotes": "",
+  "contractObservationFailures": {
+    "inputMutation": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "resultAliasing": {
+      "count": 16,
+      "first": {
+        "args": [
+          "BMDHB\u0011\u0004\u0002\u0018:C\u001cM\b\u001eV\u0000_Gq&x-/YHbI#\u001b3A"
+        ],
+        "validatorAccepted": true,
+        "size": {
+          "elements": null,
+          "jsonChars": 78
+        },
+        "reference": {
+          "kind": "returned",
+          "value": "BMDHB\u0011\u0004\u0002\u0018:C\u001cM\b\u001eV\u0000_Gq&x-/YHbI#\u001b3A",
+          "observations": {
+            "inputBefore": [
+              "BMDHB\u0011\u0004\u0002\u0018:C\u001cM\b\u001eV\u0000_Gq&x-/YHbI#\u001b3A"
+            ],
+            "inputAfter": [
+              "BMDHB\u0011\u0004\u0002\u0018:C\u001cM\b\u001eV\u0000_Gq&x-/YHbI#\u001b3A"
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": true,
+            "extraResultProperties": []
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "candidate": {
+          "kind": "returned",
+          "value": "BMDHB\u0011\u0004\u0002\u0018:C\u001cM\b\u001eV\u0000_Gq&x-/YHbI#\u001b3A",
+          "observations": {
+            "inputBefore": [
+              "BMDHB\u0011\u0004\u0002\u0018:C\u001cM\b\u001eV\u0000_Gq&x-/YHbI#\u001b3A"
+            ],
+            "inputAfter": [
+              "BMDHB\u0011\u0004\u0002\u0018:C\u001cM\b\u001eV\u0000_Gq&x-/YHbI#\u001b3A"
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": true,
+            "extraResultProperties": []
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "valueDiscrepancy": false,
+        "contractObservations": {
+          "reference": {
+            "inputBefore": [
+              "BMDHB\u0011\u0004\u0002\u0018:C\u001cM\b\u001eV\u0000_Gq&x-/YHbI#\u001b3A"
+            ],
+            "inputAfter": [
+              "BMDHB\u0011\u0004\u0002\u0018:C\u001cM\b\u001eV\u0000_Gq&x-/YHbI#\u001b3A"
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": true,
+            "extraResultProperties": []
+          },
+          "candidate": {
+            "inputBefore": [
+              "BMDHB\u0011\u0004\u0002\u0018:C\u001cM\b\u001eV\u0000_Gq&x-/YHbI#\u001b3A"
+            ],
+            "inputAfter": [
+              "BMDHB\u0011\u0004\u0002\u0018:C\u001cM\b\u001eV\u0000_Gq&x-/YHbI#\u001b3A"
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": true,
+            "extraResultProperties": []
+          }
+        }
+      },
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "unexpectedResultProperties": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    }
+  },
+  "originalFailure": {
+    "args": [
+      "%\u001091K\u0013\bp\u001c4T6\bT?\bh\u000b>\u0005zx%o\u0019<$'ew:u\u0015\u0010\f"
+    ],
+    "validatorAccepted": true,
+    "size": {
+      "elements": null,
+      "jsonChars": 83
+    },
+    "reference": {
+      "kind": "returned",
+      "value": "%\u001091K\u0013\bp\u001c4T6\bT?\bh\u000b>\u0005zx%o\u0019<$'ew:u\u0015\u0010\f",
+      "observations": {
+        "inputBefore": [
+          "%\u001091K\u0013\bp\u001c4T6\bT?\bh\u000b>\u0005zx%o\u0019<$'ew:u\u0015\u0010\f"
+        ],
+        "inputAfter": [
+          "%\u001091K\u0013\bp\u001c4T6\bT?\bh\u000b>\u0005zx%o\u0019<$'ew:u\u0015\u0010\f"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": true,
+        "extraResultProperties": []
+      },
+      "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+    },
+    "candidate": {
+      "kind": "returned",
+      "value": "%\u001091K\u0013\bp\u001c4T6\bT?\bh\u000b>\u0005zx%o\u0019<$'ew:u\u0015\u0010",
+      "observations": {
+        "inputBefore": [
+          "%\u001091K\u0013\bp\u001c4T6\bT?\bh\u000b>\u0005zx%o\u0019<$'ew:u\u0015\u0010\f"
+        ],
+        "inputAfter": [
+          "%\u001091K\u0013\bp\u001c4T6\bT?\bh\u000b>\u0005zx%o\u0019<$'ew:u\u0015\u0010\f"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      },
+      "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+    },
+    "valueDiscrepancy": true,
+    "contractObservations": {
+      "reference": {
+        "inputBefore": [
+          "%\u001091K\u0013\bp\u001c4T6\bT?\bh\u000b>\u0005zx%o\u0019<$'ew:u\u0015\u0010\f"
+        ],
+        "inputAfter": [
+          "%\u001091K\u0013\bp\u001c4T6\bT?\bh\u000b>\u0005zx%o\u0019<$'ew:u\u0015\u0010\f"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": true,
+        "extraResultProperties": []
+      },
+      "candidate": {
+        "inputBefore": [
+          "%\u001091K\u0013\bp\u001c4T6\bT?\bh\u000b>\u0005zx%o\u0019<$'ew:u\u0015\u0010\f"
+        ],
+        "inputAfter": [
+          "%\u001091K\u0013\bp\u001c4T6\bT?\bh\u000b>\u0005zx%o\u0019<$'ew:u\u0015\u0010\f"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      }
+    }
+  },
+  "reducedFailure": null,
+  "interruption": null,
+  "replay": {
+    "fastCheckPath": null,
+    "directInput": [
+      "%\u001091K\u0013\bp\u001c4T6\bT?\bh\u000b>\u0005zx%o\u0019<$'ew:u\u0015\u0010\f"
+    ],
+    "note": "Replay runs the saved candidate again. It does not call Ollama and it does not change the candidate file."
+  },
+  "fastCheck": null
+}

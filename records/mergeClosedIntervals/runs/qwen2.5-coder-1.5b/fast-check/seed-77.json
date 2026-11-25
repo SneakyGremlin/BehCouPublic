@@ -1,0 +1,553 @@
+{
+  "taskId": "mergeClosedIntervals",
+  "specVersion": 1,
+  "candidateId": "mergeClosedIntervals/qwen2.5-coder-1.5b",
+  "method": "fast-check",
+  "seed": 77,
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "budget": {
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000
+  },
+  "samplingRevision": "sampling.v1",
+  "sampler": {
+    "id": "fast-check",
+    "distribution": "Each element is an equal-weight (1:1) oneof of (a) a short interval (start in [-50, 50], length 0..5) and (b) a full-range interval (two ordered integers in [-1000, 1000]). array length 0..32 via fast-check biased integer sizing (size: \"max\"). Shrinking re-applies the ordering, so it stays valid."
+  },
+  "executions": {
+    "search": 100,
+    "shrinking": 0,
+    "replay": 0
+  },
+  "stoppingReason": "budget-exhausted",
+  "incomplete": false,
+  "failureClass": "none",
+  "valueDiscrepancy": false,
+  "discrepancyIsConfirmedViolation": false,
+  "contractVerdict": null,
+  "contractVerdictGuide": "Leave contractVerdict null until you adjudicate by hand. A returned-value discrepancy is not a confirmed candidate violation. Suggested values: candidate-violation, reference-bug, ambiguous-contract, not-a-violation.",
+  "verdictNotes": "",
+  "contractObservationFailures": {
+    "inputMutation": {
+      "count": 85,
+      "first": {
+        "args": [
+          [
+            {
+              "start": -783,
+              "end": 325
+            },
+            {
+              "start": 36,
+              "end": 37
+            },
+            {
+              "start": 827,
+              "end": 914
+            },
+            {
+              "start": 143,
+              "end": 649
+            },
+            {
+              "start": -729,
+              "end": 35
+            },
+            {
+              "start": 38,
+              "end": 42
+            },
+            {
+              "start": -14,
+              "end": -10
+            },
+            {
+              "start": -35,
+              "end": -31
+            },
+            {
+              "start": -437,
+              "end": 333
+            },
+            {
+              "start": 44,
+              "end": 46
+            },
+            {
+              "start": 48,
+              "end": 48
+            }
+          ]
+        ],
+        "validatorAccepted": true,
+        "size": {
+          "elements": 11,
+          "jsonChars": 261
+        },
+        "reference": {
+          "kind": "returned",
+          "value": [
+            {
+              "start": -783,
+              "end": 649
+            },
+            {
+              "start": 827,
+              "end": 914
+            }
+          ],
+          "observations": {
+            "inputBefore": [
+              [
+                {
+                  "start": -783,
+                  "end": 325
+                },
+                {
+                  "start": 36,
+                  "end": 37
+                },
+                {
+                  "start": 827,
+                  "end": 914
+                },
+                {
+                  "start": 143,
+                  "end": 649
+                },
+                {
+                  "start": -729,
+                  "end": 35
+                },
+                {
+                  "start": 38,
+                  "end": 42
+                },
+                {
+                  "start": -14,
+                  "end": -10
+                },
+                {
+                  "start": -35,
+                  "end": -31
+                },
+                {
+                  "start": -437,
+                  "end": 333
+                },
+                {
+                  "start": 44,
+                  "end": 46
+                },
+                {
+                  "start": 48,
+                  "end": 48
+                }
+              ]
+            ],
+            "inputAfter": [
+              [
+                {
+                  "start": -783,
+                  "end": 325
+                },
+                {
+                  "start": 36,
+                  "end": 37
+                },
+                {
+                  "start": 827,
+                  "end": 914
+                },
+                {
+                  "start": 143,
+                  "end": 649
+                },
+                {
+                  "start": -729,
+                  "end": 35
+                },
+                {
+                  "start": 38,
+                  "end": 42
+                },
+                {
+                  "start": -14,
+                  "end": -10
+                },
+                {
+                  "start": -35,
+                  "end": -31
+                },
+                {
+                  "start": -437,
+                  "end": 333
+                },
+                {
+                  "start": 44,
+                  "end": 46
+                },
+                {
+                  "start": 48,
+                  "end": 48
+                }
+              ]
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": false,
+            "extraResultProperties": []
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "candidate": {
+          "kind": "returned",
+          "value": [
+            {
+              "start": -783,
+              "end": 649
+            },
+            {
+              "start": 827,
+              "end": 914
+            }
+          ],
+          "observations": {
+            "inputBefore": [
+              [
+                {
+                  "start": -783,
+                  "end": 325
+                },
+                {
+                  "start": 36,
+                  "end": 37
+                },
+                {
+                  "start": 827,
+                  "end": 914
+                },
+                {
+                  "start": 143,
+                  "end": 649
+                },
+                {
+                  "start": -729,
+                  "end": 35
+                },
+                {
+                  "start": 38,
+                  "end": 42
+                },
+                {
+                  "start": -14,
+                  "end": -10
+                },
+                {
+                  "start": -35,
+                  "end": -31
+                },
+                {
+                  "start": -437,
+                  "end": 333
+                },
+                {
+                  "start": 44,
+                  "end": 46
+                },
+                {
+                  "start": 48,
+                  "end": 48
+                }
+              ]
+            ],
+            "inputAfter": [
+              [
+                {
+                  "start": -783,
+                  "end": 649
+                },
+                {
+                  "start": -729,
+                  "end": 35
+                },
+                {
+                  "start": -437,
+                  "end": 333
+                },
+                {
+                  "start": -35,
+                  "end": -31
+                },
+                {
+                  "start": -14,
+                  "end": -10
+                },
+                {
+                  "start": 36,
+                  "end": 37
+                },
+                {
+                  "start": 38,
+                  "end": 42
+                },
+                {
+                  "start": 44,
+                  "end": 46
+                },
+                {
+                  "start": 48,
+                  "end": 48
+                },
+                {
+                  "start": 143,
+                  "end": 649
+                },
+                {
+                  "start": 827,
+                  "end": 914
+                }
+              ]
+            ],
+            "inputMutated": true,
+            "resultAliasesInput": false,
+            "extraResultProperties": []
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "valueDiscrepancy": false,
+        "contractObservations": {
+          "reference": {
+            "inputBefore": [
+              [
+                {
+                  "start": -783,
+                  "end": 325
+                },
+                {
+                  "start": 36,
+                  "end": 37
+                },
+                {
+                  "start": 827,
+                  "end": 914
+                },
+                {
+                  "start": 143,
+                  "end": 649
+                },
+                {
+                  "start": -729,
+                  "end": 35
+                },
+                {
+                  "start": 38,
+                  "end": 42
+                },
+                {
+                  "start": -14,
+                  "end": -10
+                },
+                {
+                  "start": -35,
+                  "end": -31
+                },
+                {
+                  "start": -437,
+                  "end": 333
+                },
+                {
+                  "start": 44,
+                  "end": 46
+                },
+                {
+                  "start": 48,
+                  "end": 48
+                }
+              ]
+            ],
+            "inputAfter": [
+              [
+                {
+                  "start": -783,
+                  "end": 325
+                },
+                {
+                  "start": 36,
+                  "end": 37
+                },
+                {
+                  "start": 827,
+                  "end": 914
+                },
+                {
+                  "start": 143,
+                  "end": 649
+                },
+                {
+                  "start": -729,
+                  "end": 35
+                },
+                {
+                  "start": 38,
+                  "end": 42
+                },
+                {
+                  "start": -14,
+                  "end": -10
+                },
+                {
+                  "start": -35,
+                  "end": -31
+                },
+                {
+                  "start": -437,
+                  "end": 333
+                },
+                {
+                  "start": 44,
+                  "end": 46
+                },
+                {
+                  "start": 48,
+                  "end": 48
+                }
+              ]
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": false,
+            "extraResultProperties": []
+          },
+          "candidate": {
+            "inputBefore": [
+              [
+                {
+                  "start": -783,
+                  "end": 325
+                },
+                {
+                  "start": 36,
+                  "end": 37
+                },
+                {
+                  "start": 827,
+                  "end": 914
+                },
+                {
+                  "start": 143,
+                  "end": 649
+                },
+                {
+                  "start": -729,
+                  "end": 35
+                },
+                {
+                  "start": 38,
+                  "end": 42
+                },
+                {
+                  "start": -14,
+                  "end": -10
+                },
+                {
+                  "start": -35,
+                  "end": -31
+                },
+                {
+                  "start": -437,
+                  "end": 333
+                },
+                {
+                  "start": 44,
+                  "end": 46
+                },
+                {
+                  "start": 48,
+                  "end": 48
+                }
+              ]
+            ],
+            "inputAfter": [
+              [
+                {
+                  "start": -783,
+                  "end": 649
+                },
+                {
+                  "start": -729,
+                  "end": 35
+                },
+                {
+                  "start": -437,
+                  "end": 333
+                },
+                {
+                  "start": -35,
+                  "end": -31
+                },
+                {
+                  "start": -14,
+                  "end": -10
+                },
+                {
+                  "start": 36,
+                  "end": 37
+                },
+                {
+                  "start": 38,
+                  "end": 42
+                },
+                {
+                  "start": 44,
+                  "end": 46
+                },
+                {
+                  "start": 48,
+                  "end": 48
+                },
+                {
+                  "start": 143,
+                  "end": 649
+                },
+                {
+                  "start": 827,
+                  "end": 914
+                }
+              ]
+            ],
+            "inputMutated": true,
+            "resultAliasesInput": false,
+            "extraResultProperties": []
+          }
+        }
+      },
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "resultAliasing": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "unexpectedResultProperties": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    }
+  },
+  "originalFailure": null,
+  "reducedFailure": null,
+  "interruption": null,
+  "replay": {
+    "fastCheckPath": null,
+    "directInput": null,
+    "note": "Replay runs the saved candidate again. It does not call Ollama and it does not change the candidate file."
+  },
+  "fastCheck": {
+    "numRuns": 100,
+    "numSkips": 0,
+    "numShrinks": 0
+  }
+}

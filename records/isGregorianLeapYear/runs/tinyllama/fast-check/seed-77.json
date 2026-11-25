@@ -1,0 +1,198 @@
+{
+  "taskId": "isGregorianLeapYear",
+  "specVersion": 1,
+  "candidateId": "isGregorianLeapYear/tinyllama",
+  "method": "fast-check",
+  "seed": 77,
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "budget": {
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000
+  },
+  "samplingRevision": "sampling.v1",
+  "sampler": {
+    "id": "fast-check",
+    "distribution": "Equal-weight (1:1) oneof of (a) a uniform-ish biased year in [1, 9999] and (b) a century year 100, 200, ..., 9900. Full domain, unchanged in preparation. Shrinking stays inside the chosen branch."
+  },
+  "executions": {
+    "search": 2,
+    "shrinking": 8,
+    "replay": 2
+  },
+  "stoppingReason": "discrepancy",
+  "incomplete": false,
+  "failureClass": "none",
+  "valueDiscrepancy": true,
+  "discrepancyIsConfirmedViolation": false,
+  "contractVerdict": null,
+  "contractVerdictGuide": "Leave contractVerdict null until you adjudicate by hand. A returned-value discrepancy is not a confirmed candidate violation. Suggested values: candidate-violation, reference-bug, ambiguous-contract, not-a-violation.",
+  "verdictNotes": "",
+  "contractObservationFailures": {
+    "inputMutation": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "resultAliasing": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "unexpectedResultProperties": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    }
+  },
+  "originalFailure": {
+    "args": [
+      3200
+    ],
+    "validatorAccepted": true,
+    "size": {
+      "elements": null,
+      "jsonChars": 6
+    },
+    "reference": {
+      "kind": "returned",
+      "value": true,
+      "observations": {
+        "inputBefore": [
+          3200
+        ],
+        "inputAfter": [
+          3200
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      },
+      "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+    },
+    "candidate": {
+      "kind": "threw",
+      "errorName": "Error",
+      "message": "Invalid input domain: year must be in [1, 9999]",
+      "observations": {
+        "inputBefore": [
+          3200
+        ],
+        "inputAfter": [
+          3200
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": null,
+        "extraResultProperties": []
+      }
+    },
+    "valueDiscrepancy": true,
+    "contractObservations": {
+      "reference": {
+        "inputBefore": [
+          3200
+        ],
+        "inputAfter": [
+          3200
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      },
+      "candidate": {
+        "inputBefore": [
+          3200
+        ],
+        "inputAfter": [
+          3200
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": null,
+        "extraResultProperties": []
+      }
+    }
+  },
+  "reducedFailure": {
+    "args": [
+      2200
+    ],
+    "validatorAccepted": true,
+    "size": {
+      "elements": null,
+      "jsonChars": 6
+    },
+    "reference": {
+      "kind": "returned",
+      "value": false,
+      "observations": {
+        "inputBefore": [
+          2200
+        ],
+        "inputAfter": [
+          2200
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      },
+      "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+    },
+    "candidate": {
+      "kind": "threw",
+      "errorName": "Error",
+      "message": "Invalid input domain: year must be in [1, 9999]",
+      "observations": {
+        "inputBefore": [
+          2200
+        ],
+        "inputAfter": [
+          2200
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": null,
+        "extraResultProperties": []
+      }
+    },
+    "valueDiscrepancy": true,
+    "contractObservations": {
+      "reference": {
+        "inputBefore": [
+          2200
+        ],
+        "inputAfter": [
+          2200
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      },
+      "candidate": {
+        "inputBefore": [
+          2200
+        ],
+        "inputAfter": [
+          2200
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": null,
+        "extraResultProperties": []
+      }
+    }
+  },
+  "interruption": null,
+  "replay": {
+    "fastCheckPath": "1:2:1:0",
+    "directInput": [
+      2200
+    ],
+    "note": "Replay runs the saved candidate again. It does not call Ollama and it does not change the candidate file."
+  },
+  "fastCheck": {
+    "numRuns": 1,
+    "numSkips": 0,
+    "numShrinks": 3
+  }
+}

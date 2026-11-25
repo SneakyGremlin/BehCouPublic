@@ -1,0 +1,148 @@
+{
+  "taskId": "truncateText",
+  "specVersion": 1,
+  "candidateId": "truncateText/gpt-4.1-mini-2025-04-14",
+  "method": "fast-check",
+  "seed": 11,
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "budget": {
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000
+  },
+  "samplingRevision": "sampling.v1",
+  "sampler": {
+    "id": "fast-check",
+    "distribution": "Equal-weight (1:1) oneof over the (text, maxLength, suffix) tuple: (a) printable-ASCII text and suffix; (b) binary-ascii text and suffix. maxLength is a biased integer 0..64 in both. Shrinking stays inside the chosen branch."
+  },
+  "executions": {
+    "search": 100,
+    "shrinking": 0,
+    "replay": 0
+  },
+  "stoppingReason": "budget-exhausted",
+  "incomplete": false,
+  "failureClass": "none",
+  "valueDiscrepancy": false,
+  "discrepancyIsConfirmedViolation": false,
+  "contractVerdict": null,
+  "contractVerdictGuide": "Leave contractVerdict null until you adjudicate by hand. A returned-value discrepancy is not a confirmed candidate violation. Suggested values: candidate-violation, reference-bug, ambiguous-contract, not-a-violation.",
+  "verdictNotes": "",
+  "contractObservationFailures": {
+    "inputMutation": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "resultAliasing": {
+      "count": 55,
+      "first": {
+        "args": [
+          "\u0001\u0005~>K\u0006\u0000\u0006",
+          5,
+          "2\u000f/m\u0005"
+        ],
+        "validatorAccepted": true,
+        "size": {
+          "elements": null,
+          "jsonChars": 57
+        },
+        "reference": {
+          "kind": "returned",
+          "value": "2\u000f/m\u0005",
+          "observations": {
+            "inputBefore": [
+              "\u0001\u0005~>K\u0006\u0000\u0006",
+              5,
+              "2\u000f/m\u0005"
+            ],
+            "inputAfter": [
+              "\u0001\u0005~>K\u0006\u0000\u0006",
+              5,
+              "2\u000f/m\u0005"
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": true,
+            "extraResultProperties": []
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "candidate": {
+          "kind": "returned",
+          "value": "2\u000f/m\u0005",
+          "observations": {
+            "inputBefore": [
+              "\u0001\u0005~>K\u0006\u0000\u0006",
+              5,
+              "2\u000f/m\u0005"
+            ],
+            "inputAfter": [
+              "\u0001\u0005~>K\u0006\u0000\u0006",
+              5,
+              "2\u000f/m\u0005"
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": true,
+            "extraResultProperties": []
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "valueDiscrepancy": false,
+        "contractObservations": {
+          "reference": {
+            "inputBefore": [
+              "\u0001\u0005~>K\u0006\u0000\u0006",
+              5,
+              "2\u000f/m\u0005"
+            ],
+            "inputAfter": [
+              "\u0001\u0005~>K\u0006\u0000\u0006",
+              5,
+              "2\u000f/m\u0005"
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": true,
+            "extraResultProperties": []
+          },
+          "candidate": {
+            "inputBefore": [
+              "\u0001\u0005~>K\u0006\u0000\u0006",
+              5,
+              "2\u000f/m\u0005"
+            ],
+            "inputAfter": [
+              "\u0001\u0005~>K\u0006\u0000\u0006",
+              5,
+              "2\u000f/m\u0005"
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": true,
+            "extraResultProperties": []
+          }
+        }
+      },
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "unexpectedResultProperties": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    }
+  },
+  "originalFailure": null,
+  "reducedFailure": null,
+  "interruption": null,
+  "replay": {
+    "fastCheckPath": null,
+    "directInput": null,
+    "note": "Replay runs the saved candidate again. It does not call Ollama and it does not change the candidate file."
+  },
+  "fastCheck": {
+    "numRuns": 100,
+    "numSkips": 0,
+    "numShrinks": 0
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "taskId": "collapseAsciiWhitespace",
+  "specVersion": 1,
+  "candidateId": "collapseAsciiWhitespace/gpt-4.1-mini-2025-04-14",
+  "method": "random",
+  "seed": 11,
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "budget": {
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000
+  },
+  "samplingRevision": "sampling.v1",
+  "sampler": {
+    "id": "random",
+    "distribution": "Seeded mulberry32. Length uniform on 0..64; each character uniform on the code points 0..127. No shrinking."
+  },
+  "executions": {
+    "search": 7,
+    "shrinking": 0,
+    "replay": 1
+  },
+  "stoppingReason": "discrepancy",
+  "incomplete": false,
+  "failureClass": "none",
+  "valueDiscrepancy": true,
+  "discrepancyIsConfirmedViolation": false,
+  "contractVerdict": null,
+  "contractVerdictGuide": "Leave contractVerdict null until you adjudicate by hand. A returned-value discrepancy is not a confirmed candidate violation. Suggested values: candidate-violation, reference-bug, ambiguous-contract, not-a-violation.",
+  "verdictNotes": "",
+  "contractObservationFailures": {
+    "inputMutation": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "resultAliasing": {
+      "count": 3,
+      "first": {
+        "args": [
+          "\\\u0001\"fL2\u000fpv5\u0004c}Q\"\u000e\u0012\\U1G&\u0002ZwZ\bh\u001d2JCZaJqL\bVmFI"
+        ],
+        "validatorAccepted": true,
+        "size": {
+          "elements": null,
+          "jsonChars": 88
+        },
+        "reference": {
+          "kind": "returned",
+          "value": "\\\u0001\"fL2\u000fpv5\u0004c}Q\"\u000e\u0012\\U1G&\u0002ZwZ\bh\u001d2JCZaJqL\bVmFI",
+          "observations": {
+            "inputBefore": [
+              "\\\u0001\"fL2\u000fpv5\u0004c}Q\"\u000e\u0012\\U1G&\u0002ZwZ\bh\u001d2JCZaJqL\bVmFI"
+            ],
+            "inputAfter": [
+              "\\\u0001\"fL2\u000fpv5\u0004c}Q\"\u000e\u0012\\U1G&\u0002ZwZ\bh\u001d2JCZaJqL\bVmFI"
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": true,
+            "extraResultProperties": []
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "candidate": {
+          "kind": "returned",
+          "value": "\\\u0001\"fL2\u000fpv5\u0004c}Q\"\u000e\u0012\\U1G&\u0002ZwZ\bh\u001d2JCZaJqL\bVmFI",
+          "observations": {
+            "inputBefore": [
+              "\\\u0001\"fL2\u000fpv5\u0004c}Q\"\u000e\u0012\\U1G&\u0002ZwZ\bh\u001d2JCZaJqL\bVmFI"
+            ],
+            "inputAfter": [
+              "\\\u0001\"fL2\u000fpv5\u0004c}Q\"\u000e\u0012\\U1G&\u0002ZwZ\bh\u001d2JCZaJqL\bVmFI"
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": true,
+            "extraResultProperties": []
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "valueDiscrepancy": false,
+        "contractObservations": {
+          "reference": {
+            "inputBefore": [
+              "\\\u0001\"fL2\u000fpv5\u0004c}Q\"\u000e\u0012\\U1G&\u0002ZwZ\bh\u001d2JCZaJqL\bVmFI"
+            ],
+            "inputAfter": [
+              "\\\u0001\"fL2\u000fpv5\u0004c}Q\"\u000e\u0012\\U1G&\u0002ZwZ\bh\u001d2JCZaJqL\bVmFI"
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": true,
+            "extraResultProperties": []
+          },
+          "candidate": {
+            "inputBefore": [
+              "\\\u0001\"fL2\u000fpv5\u0004c}Q\"\u000e\u0012\\U1G&\u0002ZwZ\bh\u001d2JCZaJqL\bVmFI"
+            ],
+            "inputAfter": [
+              "\\\u0001\"fL2\u000fpv5\u0004c}Q\"\u000e\u0012\\U1G&\u0002ZwZ\bh\u001d2JCZaJqL\bVmFI"
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": true,
+            "extraResultProperties": []
+          }
+        }
+      },
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "unexpectedResultProperties": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    }
+  },
+  "originalFailure": {
+    "args": [
+      "nW/_\u0002Bp\u001b{Np WNnN\u0005#:D,K\u0007\u001bb Hs~VY)@:\u0014X\u0016U\u001b\\rBu{\u0014(\u001bA5i\tEIea_l\u000f\"\u000b\f@J\u000b"
+    ],
+    "validatorAccepted": true,
+    "size": {
+      "elements": null,
+      "jsonChars": 137
+    },
+    "reference": {
+      "kind": "returned",
+      "value": "nW/_\u0002Bp\u001b{Np WNnN\u0005#:D,K\u0007\u001bb Hs~VY)@:\u0014X\u0016U\u001b\\rBu{\u0014(\u001bA5i EIea_l\u000f\"\u000b\f@J\u000b",
+      "observations": {
+        "inputBefore": [
+          "nW/_\u0002Bp\u001b{Np WNnN\u0005#:D,K\u0007\u001bb Hs~VY)@:\u0014X\u0016U\u001b\\rBu{\u0014(\u001bA5i\tEIea_l\u000f\"\u000b\f@J\u000b"
+        ],
+        "inputAfter": [
+          "nW/_\u0002Bp\u001b{Np WNnN\u0005#:D,K\u0007\u001bb Hs~VY)@:\u0014X\u0016U\u001b\\rBu{\u0014(\u001bA5i\tEIea_l\u000f\"\u000b\f@J\u000b"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      },
+      "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+    },
+    "candidate": {
+      "kind": "returned",
+      "value": "nW/_\u0002Bp\u001b{Np WNnN\u0005#:D,K\u0007\u001bb Hs~VY)@:\u0014X\u0016U\u001b\\rBu{\u0014(\u001bA5i EIea_l\u000f\"\u000b\f@J",
+      "observations": {
+        "inputBefore": [
+          "nW/_\u0002Bp\u001b{Np WNnN\u0005#:D,K\u0007\u001bb Hs~VY)@:\u0014X\u0016U\u001b\\rBu{\u0014(\u001bA5i\tEIea_l\u000f\"\u000b\f@J\u000b"
+        ],
+        "inputAfter": [
+          "nW/_\u0002Bp\u001b{Np WNnN\u0005#:D,K\u0007\u001bb Hs~VY)@:\u0014X\u0016U\u001b\\rBu{\u0014(\u001bA5i\tEIea_l\u000f\"\u000b\f@J\u000b"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      },
+      "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+    },
+    "valueDiscrepancy": true,
+    "contractObservations": {
+      "reference": {
+        "inputBefore": [
+          "nW/_\u0002Bp\u001b{Np WNnN\u0005#:D,K\u0007\u001bb Hs~VY)@:\u0014X\u0016U\u001b\\rBu{\u0014(\u001bA5i\tEIea_l\u000f\"\u000b\f@J\u000b"
+        ],
+        "inputAfter": [
+          "nW/_\u0002Bp\u001b{Np WNnN\u0005#:D,K\u0007\u001bb Hs~VY)@:\u0014X\u0016U\u001b\\rBu{\u0014(\u001bA5i\tEIea_l\u000f\"\u000b\f@J\u000b"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      },
+      "candidate": {
+        "inputBefore": [
+          "nW/_\u0002Bp\u001b{Np WNnN\u0005#:D,K\u0007\u001bb Hs~VY)@:\u0014X\u0016U\u001b\\rBu{\u0014(\u001bA5i\tEIea_l\u000f\"\u000b\f@J\u000b"
+        ],
+        "inputAfter": [
+          "nW/_\u0002Bp\u001b{Np WNnN\u0005#:D,K\u0007\u001bb Hs~VY)@:\u0014X\u0016U\u001b\\rBu{\u0014(\u001bA5i\tEIea_l\u000f\"\u000b\f@J\u000b"
+        ],
+        "inputMutated": false,
+        "resultAliasesInput": false,
+        "extraResultProperties": []
+      }
+    }
+  },
+  "reducedFailure": null,
+  "interruption": null,
+  "replay": {
+    "fastCheckPath": null,
+    "directInput": [
+      "nW/_\u0002Bp\u001b{Np WNnN\u0005#:D,K\u0007\u001bb Hs~VY)@:\u0014X\u0016U\u001b\\rBu{\u0014(\u001bA5i\tEIea_l\u000f\"\u000b\f@J\u000b"
+    ],
+    "note": "Replay runs the saved candidate again. It does not call Ollama and it does not change the candidate file."
+  },
+  "fastCheck": null
+}

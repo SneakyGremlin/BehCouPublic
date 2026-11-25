@@ -1,0 +1,399 @@
+{
+  "taskId": "summarizeIntegers",
+  "specVersion": 1,
+  "candidateId": "summarizeIntegers/gpt-4.1-mini-2025-04-14",
+  "method": "random",
+  "seed": 256,
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "budget": {
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000
+  },
+  "samplingRevision": "sampling.v1",
+  "sampler": {
+    "id": "random",
+    "distribution": "values: array length uniform on 0..32, each element uniform on [-1000, 1000]. No shrinking."
+  },
+  "executions": {
+    "search": 100,
+    "shrinking": 0,
+    "replay": 0
+  },
+  "stoppingReason": "budget-exhausted",
+  "incomplete": false,
+  "failureClass": "none",
+  "valueDiscrepancy": false,
+  "discrepancyIsConfirmedViolation": false,
+  "contractVerdict": null,
+  "contractVerdictGuide": "Leave contractVerdict null until you adjudicate by hand. A returned-value discrepancy is not a confirmed candidate violation. Suggested values: candidate-violation, reference-bug, ambiguous-contract, not-a-violation.",
+  "verdictNotes": "",
+  "contractObservationFailures": {
+    "inputMutation": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "resultAliasing": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "unexpectedResultProperties": {
+      "count": 99,
+      "first": {
+        "args": [
+          [
+            -438,
+            -930,
+            -996,
+            25,
+            -118,
+            146,
+            -988,
+            -13,
+            -533,
+            707,
+            631,
+            744,
+            -484,
+            -223,
+            -725,
+            504,
+            212,
+            563,
+            725,
+            -175,
+            722,
+            -350,
+            575,
+            -592,
+            20,
+            556
+          ]
+        ],
+        "validatorAccepted": true,
+        "size": {
+          "elements": 26,
+          "jsonChars": 117
+        },
+        "reference": {
+          "kind": "returned",
+          "value": {
+            "count": 26,
+            "sum": -435,
+            "min": -996,
+            "max": 744
+          },
+          "observations": {
+            "inputBefore": [
+              [
+                -438,
+                -930,
+                -996,
+                25,
+                -118,
+                146,
+                -988,
+                -13,
+                -533,
+                707,
+                631,
+                744,
+                -484,
+                -223,
+                -725,
+                504,
+                212,
+                563,
+                725,
+                -175,
+                722,
+                -350,
+                575,
+                -592,
+                20,
+                556
+              ]
+            ],
+            "inputAfter": [
+              [
+                -438,
+                -930,
+                -996,
+                25,
+                -118,
+                146,
+                -988,
+                -13,
+                -533,
+                707,
+                631,
+                744,
+                -484,
+                -223,
+                -725,
+                504,
+                212,
+                563,
+                725,
+                -175,
+                722,
+                -350,
+                575,
+                -592,
+                20,
+                556
+              ]
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": false,
+            "extraResultProperties": [
+              "count",
+              "sum",
+              "min",
+              "max"
+            ]
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "candidate": {
+          "kind": "returned",
+          "value": {
+            "count": 26,
+            "sum": -435,
+            "min": -996,
+            "max": 744
+          },
+          "observations": {
+            "inputBefore": [
+              [
+                -438,
+                -930,
+                -996,
+                25,
+                -118,
+                146,
+                -988,
+                -13,
+                -533,
+                707,
+                631,
+                744,
+                -484,
+                -223,
+                -725,
+                504,
+                212,
+                563,
+                725,
+                -175,
+                722,
+                -350,
+                575,
+                -592,
+                20,
+                556
+              ]
+            ],
+            "inputAfter": [
+              [
+                -438,
+                -930,
+                -996,
+                25,
+                -118,
+                146,
+                -988,
+                -13,
+                -533,
+                707,
+                631,
+                744,
+                -484,
+                -223,
+                -725,
+                504,
+                212,
+                563,
+                725,
+                -175,
+                722,
+                -350,
+                575,
+                -592,
+                20,
+                556
+              ]
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": false,
+            "extraResultProperties": [
+              "count",
+              "sum",
+              "min",
+              "max"
+            ]
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "valueDiscrepancy": false,
+        "contractObservations": {
+          "reference": {
+            "inputBefore": [
+              [
+                -438,
+                -930,
+                -996,
+                25,
+                -118,
+                146,
+                -988,
+                -13,
+                -533,
+                707,
+                631,
+                744,
+                -484,
+                -223,
+                -725,
+                504,
+                212,
+                563,
+                725,
+                -175,
+                722,
+                -350,
+                575,
+                -592,
+                20,
+                556
+              ]
+            ],
+            "inputAfter": [
+              [
+                -438,
+                -930,
+                -996,
+                25,
+                -118,
+                146,
+                -988,
+                -13,
+                -533,
+                707,
+                631,
+                744,
+                -484,
+                -223,
+                -725,
+                504,
+                212,
+                563,
+                725,
+                -175,
+                722,
+                -350,
+                575,
+                -592,
+                20,
+                556
+              ]
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": false,
+            "extraResultProperties": [
+              "count",
+              "sum",
+              "min",
+              "max"
+            ]
+          },
+          "candidate": {
+            "inputBefore": [
+              [
+                -438,
+                -930,
+                -996,
+                25,
+                -118,
+                146,
+                -988,
+                -13,
+                -533,
+                707,
+                631,
+                744,
+                -484,
+                -223,
+                -725,
+                504,
+                212,
+                563,
+                725,
+                -175,
+                722,
+                -350,
+                575,
+                -592,
+                20,
+                556
+              ]
+            ],
+            "inputAfter": [
+              [
+                -438,
+                -930,
+                -996,
+                25,
+                -118,
+                146,
+                -988,
+                -13,
+                -533,
+                707,
+                631,
+                744,
+                -484,
+                -223,
+                -725,
+                504,
+                212,
+                563,
+                725,
+                -175,
+                722,
+                -350,
+                575,
+                -592,
+                20,
+                556
+              ]
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": false,
+            "extraResultProperties": [
+              "count",
+              "sum",
+              "min",
+              "max"
+            ]
+          }
+        }
+      },
+      "contractVerdict": null,
+      "verdictNotes": ""
+    }
+  },
+  "originalFailure": null,
+  "reducedFailure": null,
+  "interruption": null,
+  "replay": {
+    "fastCheckPath": null,
+    "directInput": null,
+    "note": "Replay runs the saved candidate again. It does not call Ollama and it does not change the candidate file."
+  },
+  "fastCheck": null
+}

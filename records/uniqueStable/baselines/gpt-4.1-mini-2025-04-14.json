@@ -1,0 +1,188 @@
+{
+  "taskId": "uniqueStable",
+  "specVersion": 1,
+  "candidateId": "uniqueStable/gpt-4.1-mini-2025-04-14",
+  "syntaxStatus": "passed",
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "ineligibleReason": null,
+  "cases": [
+    {
+      "args": [
+        []
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": []
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [],
+        "observations": {
+          "inputBefore": [
+            []
+          ],
+          "inputAfter": [
+            []
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [],
+        "observations": {
+          "inputBefore": [
+            []
+          ],
+          "inputAfter": [
+            []
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            []
+          ],
+          "inputAfter": [
+            []
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            []
+          ],
+          "inputAfter": [
+            []
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    },
+    {
+      "args": [
+        [
+          1,
+          1,
+          2
+        ]
+      ],
+      "expected": {
+        "kind": "returned",
+        "value": [
+          1,
+          2
+        ]
+      },
+      "passed": true,
+      "valueDiscrepancy": false,
+      "incomplete": false,
+      "reference": {
+        "kind": "returned",
+        "value": [
+          1,
+          2
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              1,
+              1,
+              2
+            ]
+          ],
+          "inputAfter": [
+            [
+              1,
+              1,
+              2
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "candidate": {
+        "kind": "returned",
+        "value": [
+          1,
+          2
+        ],
+        "observations": {
+          "inputBefore": [
+            [
+              1,
+              1,
+              2
+            ]
+          ],
+          "inputAfter": [
+            [
+              1,
+              1,
+              2
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      },
+      "contractObservations": {
+        "reference": {
+          "inputBefore": [
+            [
+              1,
+              1,
+              2
+            ]
+          ],
+          "inputAfter": [
+            [
+              1,
+              1,
+              2
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        },
+        "candidate": {
+          "inputBefore": [
+            [
+              1,
+              1,
+              2
+            ]
+          ],
+          "inputAfter": [
+            [
+              1,
+              1,
+              2
+            ]
+          ],
+          "inputMutated": false,
+          "resultAliasesInput": false,
+          "extraResultProperties": []
+        }
+      }
+    }
+  ]
+}

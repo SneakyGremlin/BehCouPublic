@@ -1,0 +1,505 @@
+{
+  "taskId": "mergeClosedIntervals",
+  "specVersion": 1,
+  "candidateId": "mergeClosedIntervals/qwen2.5-coder-1.5b",
+  "method": "random",
+  "seed": 507,
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "budget": {
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000
+  },
+  "samplingRevision": "sampling.v1",
+  "sampler": {
+    "id": "random",
+    "distribution": "intervals: array length uniform on 0..32; each interval is two integers uniform on [-1000, 1000], ordered so start <= end. No shrinking."
+  },
+  "executions": {
+    "search": 100,
+    "shrinking": 0,
+    "replay": 0
+  },
+  "stoppingReason": "budget-exhausted",
+  "incomplete": false,
+  "failureClass": "none",
+  "valueDiscrepancy": false,
+  "discrepancyIsConfirmedViolation": false,
+  "contractVerdict": null,
+  "contractVerdictGuide": "Leave contractVerdict null until you adjudicate by hand. A returned-value discrepancy is not a confirmed candidate violation. Suggested values: candidate-violation, reference-bug, ambiguous-contract, not-a-violation.",
+  "verdictNotes": "",
+  "contractObservationFailures": {
+    "inputMutation": {
+      "count": 94,
+      "first": {
+        "args": [
+          [
+            {
+              "start": 669,
+              "end": 892
+            },
+            {
+              "start": 833,
+              "end": 864
+            },
+            {
+              "start": 791,
+              "end": 830
+            },
+            {
+              "start": -503,
+              "end": 869
+            },
+            {
+              "start": -277,
+              "end": 310
+            },
+            {
+              "start": -128,
+              "end": -56
+            },
+            {
+              "start": -838,
+              "end": -599
+            },
+            {
+              "start": -130,
+              "end": 185
+            },
+            {
+              "start": -648,
+              "end": 52
+            },
+            {
+              "start": -970,
+              "end": 739
+            }
+          ]
+        ],
+        "validatorAccepted": true,
+        "size": {
+          "elements": 10,
+          "jsonChars": 250
+        },
+        "reference": {
+          "kind": "returned",
+          "value": [
+            {
+              "start": -970,
+              "end": 892
+            }
+          ],
+          "observations": {
+            "inputBefore": [
+              [
+                {
+                  "start": 669,
+                  "end": 892
+                },
+                {
+                  "start": 833,
+                  "end": 864
+                },
+                {
+                  "start": 791,
+                  "end": 830
+                },
+                {
+                  "start": -503,
+                  "end": 869
+                },
+                {
+                  "start": -277,
+                  "end": 310
+                },
+                {
+                  "start": -128,
+                  "end": -56
+                },
+                {
+                  "start": -838,
+                  "end": -599
+                },
+                {
+                  "start": -130,
+                  "end": 185
+                },
+                {
+                  "start": -648,
+                  "end": 52
+                },
+                {
+                  "start": -970,
+                  "end": 739
+                }
+              ]
+            ],
+            "inputAfter": [
+              [
+                {
+                  "start": 669,
+                  "end": 892
+                },
+                {
+                  "start": 833,
+                  "end": 864
+                },
+                {
+                  "start": 791,
+                  "end": 830
+                },
+                {
+                  "start": -503,
+                  "end": 869
+                },
+                {
+                  "start": -277,
+                  "end": 310
+                },
+                {
+                  "start": -128,
+                  "end": -56
+                },
+                {
+                  "start": -838,
+                  "end": -599
+                },
+                {
+                  "start": -130,
+                  "end": 185
+                },
+                {
+                  "start": -648,
+                  "end": 52
+                },
+                {
+                  "start": -970,
+                  "end": 739
+                }
+              ]
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": false,
+            "extraResultProperties": []
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "candidate": {
+          "kind": "returned",
+          "value": [
+            {
+              "start": -970,
+              "end": 892
+            }
+          ],
+          "observations": {
+            "inputBefore": [
+              [
+                {
+                  "start": 669,
+                  "end": 892
+                },
+                {
+                  "start": 833,
+                  "end": 864
+                },
+                {
+                  "start": 791,
+                  "end": 830
+                },
+                {
+                  "start": -503,
+                  "end": 869
+                },
+                {
+                  "start": -277,
+                  "end": 310
+                },
+                {
+                  "start": -128,
+                  "end": -56
+                },
+                {
+                  "start": -838,
+                  "end": -599
+                },
+                {
+                  "start": -130,
+                  "end": 185
+                },
+                {
+                  "start": -648,
+                  "end": 52
+                },
+                {
+                  "start": -970,
+                  "end": 739
+                }
+              ]
+            ],
+            "inputAfter": [
+              [
+                {
+                  "start": -970,
+                  "end": 892
+                },
+                {
+                  "start": -838,
+                  "end": -599
+                },
+                {
+                  "start": -648,
+                  "end": 52
+                },
+                {
+                  "start": -503,
+                  "end": 869
+                },
+                {
+                  "start": -277,
+                  "end": 310
+                },
+                {
+                  "start": -130,
+                  "end": 185
+                },
+                {
+                  "start": -128,
+                  "end": -56
+                },
+                {
+                  "start": 669,
+                  "end": 892
+                },
+                {
+                  "start": 791,
+                  "end": 830
+                },
+                {
+                  "start": 833,
+                  "end": 864
+                }
+              ]
+            ],
+            "inputMutated": true,
+            "resultAliasesInput": false,
+            "extraResultProperties": []
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "valueDiscrepancy": false,
+        "contractObservations": {
+          "reference": {
+            "inputBefore": [
+              [
+                {
+                  "start": 669,
+                  "end": 892
+                },
+                {
+                  "start": 833,
+                  "end": 864
+                },
+                {
+                  "start": 791,
+                  "end": 830
+                },
+                {
+                  "start": -503,
+                  "end": 869
+                },
+                {
+                  "start": -277,
+                  "end": 310
+                },
+                {
+                  "start": -128,
+                  "end": -56
+                },
+                {
+                  "start": -838,
+                  "end": -599
+                },
+                {
+                  "start": -130,
+                  "end": 185
+                },
+                {
+                  "start": -648,
+                  "end": 52
+                },
+                {
+                  "start": -970,
+                  "end": 739
+                }
+              ]
+            ],
+            "inputAfter": [
+              [
+                {
+                  "start": 669,
+                  "end": 892
+                },
+                {
+                  "start": 833,
+                  "end": 864
+                },
+                {
+                  "start": 791,
+                  "end": 830
+                },
+                {
+                  "start": -503,
+                  "end": 869
+                },
+                {
+                  "start": -277,
+                  "end": 310
+                },
+                {
+                  "start": -128,
+                  "end": -56
+                },
+                {
+                  "start": -838,
+                  "end": -599
+                },
+                {
+                  "start": -130,
+                  "end": 185
+                },
+                {
+                  "start": -648,
+                  "end": 52
+                },
+                {
+                  "start": -970,
+                  "end": 739
+                }
+              ]
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": false,
+            "extraResultProperties": []
+          },
+          "candidate": {
+            "inputBefore": [
+              [
+                {
+                  "start": 669,
+                  "end": 892
+                },
+                {
+                  "start": 833,
+                  "end": 864
+                },
+                {
+                  "start": 791,
+                  "end": 830
+                },
+                {
+                  "start": -503,
+                  "end": 869
+                },
+                {
+                  "start": -277,
+                  "end": 310
+                },
+                {
+                  "start": -128,
+                  "end": -56
+                },
+                {
+                  "start": -838,
+                  "end": -599
+                },
+                {
+                  "start": -130,
+                  "end": 185
+                },
+                {
+                  "start": -648,
+                  "end": 52
+                },
+                {
+                  "start": -970,
+                  "end": 739
+                }
+              ]
+            ],
+            "inputAfter": [
+              [
+                {
+                  "start": -970,
+                  "end": 892
+                },
+                {
+                  "start": -838,
+                  "end": -599
+                },
+                {
+                  "start": -648,
+                  "end": 52
+                },
+                {
+                  "start": -503,
+                  "end": 869
+                },
+                {
+                  "start": -277,
+                  "end": 310
+                },
+                {
+                  "start": -130,
+                  "end": 185
+                },
+                {
+                  "start": -128,
+                  "end": -56
+                },
+                {
+                  "start": 669,
+                  "end": 892
+                },
+                {
+                  "start": 791,
+                  "end": 830
+                },
+                {
+                  "start": 833,
+                  "end": 864
+                }
+              ]
+            ],
+            "inputMutated": true,
+            "resultAliasesInput": false,
+            "extraResultProperties": []
+          }
+        }
+      },
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "resultAliasing": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "unexpectedResultProperties": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    }
+  },
+  "originalFailure": null,
+  "reducedFailure": null,
+  "interruption": null,
+  "replay": {
+    "fastCheckPath": null,
+    "directInput": null,
+    "note": "Replay runs the saved candidate again. It does not call Ollama and it does not change the candidate file."
+  },
+  "fastCheck": null
+}

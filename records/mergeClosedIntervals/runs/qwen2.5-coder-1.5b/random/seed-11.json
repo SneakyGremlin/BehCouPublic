@@ -1,0 +1,757 @@
+{
+  "taskId": "mergeClosedIntervals",
+  "specVersion": 1,
+  "candidateId": "mergeClosedIntervals/qwen2.5-coder-1.5b",
+  "method": "random",
+  "seed": 11,
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "budget": {
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000
+  },
+  "samplingRevision": "sampling.v1",
+  "sampler": {
+    "id": "random",
+    "distribution": "intervals: array length uniform on 0..32; each interval is two integers uniform on [-1000, 1000], ordered so start <= end. No shrinking."
+  },
+  "executions": {
+    "search": 100,
+    "shrinking": 0,
+    "replay": 0
+  },
+  "stoppingReason": "budget-exhausted",
+  "incomplete": false,
+  "failureClass": "none",
+  "valueDiscrepancy": false,
+  "discrepancyIsConfirmedViolation": false,
+  "contractVerdict": null,
+  "contractVerdictGuide": "Leave contractVerdict null until you adjudicate by hand. A returned-value discrepancy is not a confirmed candidate violation. Suggested values: candidate-violation, reference-bug, ambiguous-contract, not-a-violation.",
+  "verdictNotes": "",
+  "contractObservationFailures": {
+    "inputMutation": {
+      "count": 94,
+      "first": {
+        "args": [
+          [
+            {
+              "start": -927,
+              "end": 10
+            },
+            {
+              "start": 26,
+              "end": 971
+            },
+            {
+              "start": 356,
+              "end": 978
+            },
+            {
+              "start": -700,
+              "end": 141
+            },
+            {
+              "start": -904,
+              "end": -659
+            },
+            {
+              "start": -325,
+              "end": 159
+            },
+            {
+              "start": -847,
+              "end": 137
+            },
+            {
+              "start": -811,
+              "end": 89
+            },
+            {
+              "start": 157,
+              "end": 283
+            },
+            {
+              "start": 154,
+              "end": 832
+            },
+            {
+              "start": 20,
+              "end": 905
+            },
+            {
+              "start": 590,
+              "end": 780
+            },
+            {
+              "start": -255,
+              "end": 631
+            },
+            {
+              "start": -936,
+              "end": -459
+            },
+            {
+              "start": -36,
+              "end": 679
+            },
+            {
+              "start": -498,
+              "end": 761
+            },
+            {
+              "start": 405,
+              "end": 555
+            }
+          ]
+        ],
+        "validatorAccepted": true,
+        "size": {
+          "elements": 17,
+          "jsonChars": 418
+        },
+        "reference": {
+          "kind": "returned",
+          "value": [
+            {
+              "start": -936,
+              "end": 978
+            }
+          ],
+          "observations": {
+            "inputBefore": [
+              [
+                {
+                  "start": -927,
+                  "end": 10
+                },
+                {
+                  "start": 26,
+                  "end": 971
+                },
+                {
+                  "start": 356,
+                  "end": 978
+                },
+                {
+                  "start": -700,
+                  "end": 141
+                },
+                {
+                  "start": -904,
+                  "end": -659
+                },
+                {
+                  "start": -325,
+                  "end": 159
+                },
+                {
+                  "start": -847,
+                  "end": 137
+                },
+                {
+                  "start": -811,
+                  "end": 89
+                },
+                {
+                  "start": 157,
+                  "end": 283
+                },
+                {
+                  "start": 154,
+                  "end": 832
+                },
+                {
+                  "start": 20,
+                  "end": 905
+                },
+                {
+                  "start": 590,
+                  "end": 780
+                },
+                {
+                  "start": -255,
+                  "end": 631
+                },
+                {
+                  "start": -936,
+                  "end": -459
+                },
+                {
+                  "start": -36,
+                  "end": 679
+                },
+                {
+                  "start": -498,
+                  "end": 761
+                },
+                {
+                  "start": 405,
+                  "end": 555
+                }
+              ]
+            ],
+            "inputAfter": [
+              [
+                {
+                  "start": -927,
+                  "end": 10
+                },
+                {
+                  "start": 26,
+                  "end": 971
+                },
+                {
+                  "start": 356,
+                  "end": 978
+                },
+                {
+                  "start": -700,
+                  "end": 141
+                },
+                {
+                  "start": -904,
+                  "end": -659
+                },
+                {
+                  "start": -325,
+                  "end": 159
+                },
+                {
+                  "start": -847,
+                  "end": 137
+                },
+                {
+                  "start": -811,
+                  "end": 89
+                },
+                {
+                  "start": 157,
+                  "end": 283
+                },
+                {
+                  "start": 154,
+                  "end": 832
+                },
+                {
+                  "start": 20,
+                  "end": 905
+                },
+                {
+                  "start": 590,
+                  "end": 780
+                },
+                {
+                  "start": -255,
+                  "end": 631
+                },
+                {
+                  "start": -936,
+                  "end": -459
+                },
+                {
+                  "start": -36,
+                  "end": 679
+                },
+                {
+                  "start": -498,
+                  "end": 761
+                },
+                {
+                  "start": 405,
+                  "end": 555
+                }
+              ]
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": false,
+            "extraResultProperties": []
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "candidate": {
+          "kind": "returned",
+          "value": [
+            {
+              "start": -936,
+              "end": 978
+            }
+          ],
+          "observations": {
+            "inputBefore": [
+              [
+                {
+                  "start": -927,
+                  "end": 10
+                },
+                {
+                  "start": 26,
+                  "end": 971
+                },
+                {
+                  "start": 356,
+                  "end": 978
+                },
+                {
+                  "start": -700,
+                  "end": 141
+                },
+                {
+                  "start": -904,
+                  "end": -659
+                },
+                {
+                  "start": -325,
+                  "end": 159
+                },
+                {
+                  "start": -847,
+                  "end": 137
+                },
+                {
+                  "start": -811,
+                  "end": 89
+                },
+                {
+                  "start": 157,
+                  "end": 283
+                },
+                {
+                  "start": 154,
+                  "end": 832
+                },
+                {
+                  "start": 20,
+                  "end": 905
+                },
+                {
+                  "start": 590,
+                  "end": 780
+                },
+                {
+                  "start": -255,
+                  "end": 631
+                },
+                {
+                  "start": -936,
+                  "end": -459
+                },
+                {
+                  "start": -36,
+                  "end": 679
+                },
+                {
+                  "start": -498,
+                  "end": 761
+                },
+                {
+                  "start": 405,
+                  "end": 555
+                }
+              ]
+            ],
+            "inputAfter": [
+              [
+                {
+                  "start": -936,
+                  "end": 978
+                },
+                {
+                  "start": -927,
+                  "end": 10
+                },
+                {
+                  "start": -904,
+                  "end": -659
+                },
+                {
+                  "start": -847,
+                  "end": 137
+                },
+                {
+                  "start": -811,
+                  "end": 89
+                },
+                {
+                  "start": -700,
+                  "end": 141
+                },
+                {
+                  "start": -498,
+                  "end": 761
+                },
+                {
+                  "start": -325,
+                  "end": 159
+                },
+                {
+                  "start": -255,
+                  "end": 631
+                },
+                {
+                  "start": -36,
+                  "end": 679
+                },
+                {
+                  "start": 20,
+                  "end": 905
+                },
+                {
+                  "start": 26,
+                  "end": 971
+                },
+                {
+                  "start": 154,
+                  "end": 832
+                },
+                {
+                  "start": 157,
+                  "end": 283
+                },
+                {
+                  "start": 356,
+                  "end": 978
+                },
+                {
+                  "start": 405,
+                  "end": 555
+                },
+                {
+                  "start": 590,
+                  "end": 780
+                }
+              ]
+            ],
+            "inputMutated": true,
+            "resultAliasesInput": false,
+            "extraResultProperties": []
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "valueDiscrepancy": false,
+        "contractObservations": {
+          "reference": {
+            "inputBefore": [
+              [
+                {
+                  "start": -927,
+                  "end": 10
+                },
+                {
+                  "start": 26,
+                  "end": 971
+                },
+                {
+                  "start": 356,
+                  "end": 978
+                },
+                {
+                  "start": -700,
+                  "end": 141
+                },
+                {
+                  "start": -904,
+                  "end": -659
+                },
+                {
+                  "start": -325,
+                  "end": 159
+                },
+                {
+                  "start": -847,
+                  "end": 137
+                },
+                {
+                  "start": -811,
+                  "end": 89
+                },
+                {
+                  "start": 157,
+                  "end": 283
+                },
+                {
+                  "start": 154,
+                  "end": 832
+                },
+                {
+                  "start": 20,
+                  "end": 905
+                },
+                {
+                  "start": 590,
+                  "end": 780
+                },
+                {
+                  "start": -255,
+                  "end": 631
+                },
+                {
+                  "start": -936,
+                  "end": -459
+                },
+                {
+                  "start": -36,
+                  "end": 679
+                },
+                {
+                  "start": -498,
+                  "end": 761
+                },
+                {
+                  "start": 405,
+                  "end": 555
+                }
+              ]
+            ],
+            "inputAfter": [
+              [
+                {
+                  "start": -927,
+                  "end": 10
+                },
+                {
+                  "start": 26,
+                  "end": 971
+                },
+                {
+                  "start": 356,
+                  "end": 978
+                },
+                {
+                  "start": -700,
+                  "end": 141
+                },
+                {
+                  "start": -904,
+                  "end": -659
+                },
+                {
+                  "start": -325,
+                  "end": 159
+                },
+                {
+                  "start": -847,
+                  "end": 137
+                },
+                {
+                  "start": -811,
+                  "end": 89
+                },
+                {
+                  "start": 157,
+                  "end": 283
+                },
+                {
+                  "start": 154,
+                  "end": 832
+                },
+                {
+                  "start": 20,
+                  "end": 905
+                },
+                {
+                  "start": 590,
+                  "end": 780
+                },
+                {
+                  "start": -255,
+                  "end": 631
+                },
+                {
+                  "start": -936,
+                  "end": -459
+                },
+                {
+                  "start": -36,
+                  "end": 679
+                },
+                {
+                  "start": -498,
+                  "end": 761
+                },
+                {
+                  "start": 405,
+                  "end": 555
+                }
+              ]
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": false,
+            "extraResultProperties": []
+          },
+          "candidate": {
+            "inputBefore": [
+              [
+                {
+                  "start": -927,
+                  "end": 10
+                },
+                {
+                  "start": 26,
+                  "end": 971
+                },
+                {
+                  "start": 356,
+                  "end": 978
+                },
+                {
+                  "start": -700,
+                  "end": 141
+                },
+                {
+                  "start": -904,
+                  "end": -659
+                },
+                {
+                  "start": -325,
+                  "end": 159
+                },
+                {
+                  "start": -847,
+                  "end": 137
+                },
+                {
+                  "start": -811,
+                  "end": 89
+                },
+                {
+                  "start": 157,
+                  "end": 283
+                },
+                {
+                  "start": 154,
+                  "end": 832
+                },
+                {
+                  "start": 20,
+                  "end": 905
+                },
+                {
+                  "start": 590,
+                  "end": 780
+                },
+                {
+                  "start": -255,
+                  "end": 631
+                },
+                {
+                  "start": -936,
+                  "end": -459
+                },
+                {
+                  "start": -36,
+                  "end": 679
+                },
+                {
+                  "start": -498,
+                  "end": 761
+                },
+                {
+                  "start": 405,
+                  "end": 555
+                }
+              ]
+            ],
+            "inputAfter": [
+              [
+                {
+                  "start": -936,
+                  "end": 978
+                },
+                {
+                  "start": -927,
+                  "end": 10
+                },
+                {
+                  "start": -904,
+                  "end": -659
+                },
+                {
+                  "start": -847,
+                  "end": 137
+                },
+                {
+                  "start": -811,
+                  "end": 89
+                },
+                {
+                  "start": -700,
+                  "end": 141
+                },
+                {
+                  "start": -498,
+                  "end": 761
+                },
+                {
+                  "start": -325,
+                  "end": 159
+                },
+                {
+                  "start": -255,
+                  "end": 631
+                },
+                {
+                  "start": -36,
+                  "end": 679
+                },
+                {
+                  "start": 20,
+                  "end": 905
+                },
+                {
+                  "start": 26,
+                  "end": 971
+                },
+                {
+                  "start": 154,
+                  "end": 832
+                },
+                {
+                  "start": 157,
+                  "end": 283
+                },
+                {
+                  "start": 356,
+                  "end": 978
+                },
+                {
+                  "start": 405,
+                  "end": 555
+                },
+                {
+                  "start": 590,
+                  "end": 780
+                }
+              ]
+            ],
+            "inputMutated": true,
+            "resultAliasesInput": false,
+            "extraResultProperties": []
+          }
+        }
+      },
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "resultAliasing": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "unexpectedResultProperties": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    }
+  },
+  "originalFailure": null,
+  "reducedFailure": null,
+  "interruption": null,
+  "replay": {
+    "fastCheckPath": null,
+    "directInput": null,
+    "note": "Replay runs the saved candidate again. It does not call Ollama and it does not change the candidate file."
+  },
+  "fastCheck": null
+}

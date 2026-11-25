@@ -1,0 +1,418 @@
+{
+  "taskId": "paginate",
+  "specVersion": 1,
+  "candidateId": "paginate/gpt-4.1-mini-2025-04-14",
+  "method": "fast-check",
+  "seed": 101,
+  "baselineStatus": "passed",
+  "countsTowardAdditionalDetection": true,
+  "budget": {
+    "maxValidInputs": 100,
+    "callTimeoutMs": 2000
+  },
+  "samplingRevision": "sampling.v1",
+  "sampler": {
+    "id": "fast-check",
+    "distribution": "values: integers in [-1000, 1000], array length 0..32 via fast-check biased integer sizing (size: \"max\"). pageNumber and pageSize each: equal-weight (1:1) oneof of 1..12 and 1..1000 (biased integers). Shrinking stays inside the chosen branch."
+  },
+  "executions": {
+    "search": 100,
+    "shrinking": 0,
+    "replay": 0
+  },
+  "stoppingReason": "budget-exhausted",
+  "incomplete": false,
+  "failureClass": "none",
+  "valueDiscrepancy": false,
+  "discrepancyIsConfirmedViolation": false,
+  "contractVerdict": null,
+  "contractVerdictGuide": "Leave contractVerdict null until you adjudicate by hand. A returned-value discrepancy is not a confirmed candidate violation. Suggested values: candidate-violation, reference-bug, ambiguous-contract, not-a-violation.",
+  "verdictNotes": "",
+  "contractObservationFailures": {
+    "inputMutation": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "resultAliasing": {
+      "count": 0,
+      "first": null,
+      "contractVerdict": null,
+      "verdictNotes": ""
+    },
+    "unexpectedResultProperties": {
+      "count": 100,
+      "first": {
+        "args": [
+          [
+            -853,
+            -408,
+            741,
+            975,
+            637,
+            -640,
+            -124,
+            513,
+            -161,
+            675,
+            717,
+            -283,
+            -922,
+            155,
+            -40,
+            680,
+            825,
+            529,
+            -358,
+            -513,
+            -10,
+            -897,
+            89,
+            463,
+            -533
+          ],
+          349,
+          3
+        ],
+        "validatorAccepted": true,
+        "size": {
+          "elements": null,
+          "jsonChars": 119
+        },
+        "reference": {
+          "kind": "returned",
+          "value": {
+            "items": [],
+            "pageNumber": 349,
+            "pageSize": 3,
+            "totalItems": 25,
+            "totalPages": 9
+          },
+          "observations": {
+            "inputBefore": [
+              [
+                -853,
+                -408,
+                741,
+                975,
+                637,
+                -640,
+                -124,
+                513,
+                -161,
+                675,
+                717,
+                -283,
+                -922,
+                155,
+                -40,
+                680,
+                825,
+                529,
+                -358,
+                -513,
+                -10,
+                -897,
+                89,
+                463,
+                -533
+              ],
+              349,
+              3
+            ],
+            "inputAfter": [
+              [
+                -853,
+                -408,
+                741,
+                975,
+                637,
+                -640,
+                -124,
+                513,
+                -161,
+                675,
+                717,
+                -283,
+                -922,
+                155,
+                -40,
+                680,
+                825,
+                529,
+                -358,
+                -513,
+                -10,
+                -897,
+                89,
+                463,
+                -533
+              ],
+              349,
+              3
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": false,
+            "extraResultProperties": [
+              "items",
+              "pageNumber",
+              "pageSize",
+              "totalItems",
+              "totalPages"
+            ]
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "candidate": {
+          "kind": "returned",
+          "value": {
+            "items": [],
+            "pageNumber": 349,
+            "pageSize": 3,
+            "totalItems": 25,
+            "totalPages": 9
+          },
+          "observations": {
+            "inputBefore": [
+              [
+                -853,
+                -408,
+                741,
+                975,
+                637,
+                -640,
+                -124,
+                513,
+                -161,
+                675,
+                717,
+                -283,
+                -922,
+                155,
+                -40,
+                680,
+                825,
+                529,
+                -358,
+                -513,
+                -10,
+                -897,
+                89,
+                463,
+                -533
+              ],
+              349,
+              3
+            ],
+            "inputAfter": [
+              [
+                -853,
+                -408,
+                741,
+                975,
+                637,
+                -640,
+                -124,
+                513,
+                -161,
+                675,
+                717,
+                -283,
+                -922,
+                155,
+                -40,
+                680,
+                825,
+                529,
+                -358,
+                -513,
+                -10,
+                -897,
+                89,
+                463,
+                -533
+              ],
+              349,
+              3
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": false,
+            "extraResultProperties": [
+              "items",
+              "pageNumber",
+              "pageSize",
+              "totalItems",
+              "totalPages"
+            ]
+          },
+          "note": "value is the JSON form of the result. Extra own properties are listed in observations and were captured before serialization."
+        },
+        "valueDiscrepancy": false,
+        "contractObservations": {
+          "reference": {
+            "inputBefore": [
+              [
+                -853,
+                -408,
+                741,
+                975,
+                637,
+                -640,
+                -124,
+                513,
+                -161,
+                675,
+                717,
+                -283,
+                -922,
+                155,
+                -40,
+                680,
+                825,
+                529,
+                -358,
+                -513,
+                -10,
+                -897,
+                89,
+                463,
+                -533
+              ],
+              349,
+              3
+            ],
+            "inputAfter": [
+              [
+                -853,
+                -408,
+                741,
+                975,
+                637,
+                -640,
+                -124,
+                513,
+                -161,
+                675,
+                717,
+                -283,
+                -922,
+                155,
+                -40,
+                680,
+                825,
+                529,
+                -358,
+                -513,
+                -10,
+                -897,
+                89,
+                463,
+                -533
+              ],
+              349,
+              3
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": false,
+            "extraResultProperties": [
+              "items",
+              "pageNumber",
+              "pageSize",
+              "totalItems",
+              "totalPages"
+            ]
+          },
+          "candidate": {
+            "inputBefore": [
+              [
+                -853,
+                -408,
+                741,
+                975,
+                637,
+                -640,
+                -124,
+                513,
+                -161,
+                675,
+                717,
+                -283,
+                -922,
+                155,
+                -40,
+                680,
+                825,
+                529,
+                -358,
+                -513,
+                -10,
+                -897,
+                89,
+                463,
+                -533
+              ],
+              349,
+              3
+            ],
+            "inputAfter": [
+              [
+                -853,
+                -408,
+                741,
+                975,
+                637,
+                -640,
+                -124,
+                513,
+                -161,
+                675,
+                717,
+                -283,
+                -922,
+                155,
+                -40,
+                680,
+                825,
+                529,
+                -358,
+                -513,
+                -10,
+                -897,
+                89,
+                463,
+                -533
+              ],
+              349,
+              3
+            ],
+            "inputMutated": false,
+            "resultAliasesInput": false,
+            "extraResultProperties": [
+              "items",
+              "pageNumber",
+              "pageSize",
+              "totalItems",
+              "totalPages"
+            ]
+          }
+        }
+      },
+      "contractVerdict": null,
+      "verdictNotes": ""
+    }
+  },
+  "originalFailure": null,
+  "reducedFailure": null,
+  "interruption": null,
+  "replay": {
+    "fastCheckPath": null,
+    "directInput": null,
+    "note": "Replay runs the saved candidate again. It does not call Ollama and it does not change the candidate file."
+  },
+  "fastCheck": {
+    "numRuns": 100,
+    "numSkips": 0,
+    "numShrinks": 0
+  }
+}
